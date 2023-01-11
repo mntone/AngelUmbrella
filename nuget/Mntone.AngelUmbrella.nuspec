@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+	<metadata>
+		<id>Mntone.AngelUmbrella</id>
+		<version>1.0.0</version>
+		<authors>mntone</authors>
+		<owners>mntone</owners>
+		<projectUrl>https://github.com/mntone/AngelUmbrella</projectUrl>
+		<license type="file">license.txt</license>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>Mntone WinUI 3 Library</description>
+		<copyright>Copyright © 2022 mntone</copyright>
+		<language>en-US</language>
+		<tags>Win Windows WinRT WinUI WinAppSDK WindowsAppSDK mntone Cpp Native UI Settings Config</tags>
+		<dependencies>
+			<group targetFramework="uap10.0.17763">
+            	<dependency id="Microsoft.WindowsAppSDK" version="[1.2,2)" />
+			</group>
+        </dependencies>
+	</metadata>
+	<files>
+		<file src="readme.txt" />
+		<file target="license.txt" src="..\LICENSE.txt" />
+
+		<file target="lib\uap10.0.17763" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella.winmd"/>
+		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\Themes" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\Themes\Generic.xaml"/>
+		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsCard.xaml"/>
+		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsCard_themeresources.xaml"/>
+		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsExpander.xaml"/>
+		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsPanel.xaml"/>
+
+		<file target="runtimes\win10-x86\lib\uap10.0.17763" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella.dll"/>
+		<file target="runtimes\win10-x86\lib\uap10.0.17763" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella.pri"/>
+	
+		<file target="runtimes\win10-x64\lib\uap10.0.17763" src="..\bin\x64-Release\AngelUmbrella\Mntone.AngelUmbrella.dll"/>
+		<file target="runtimes\win10-x64\lib\uap10.0.17763" src="..\bin\x64-Release\AngelUmbrella\Mntone.AngelUmbrella.pri"/>
+	
+		<file target="runtimes\win10-arm64\lib\uap10.0.17763" src="..\bin\ARM64-Release\AngelUmbrella\Mntone.AngelUmbrella.dll"/>
+		<file target="runtimes\win10-arm64\lib\uap10.0.17763" src="..\bin\ARM64-Release\AngelUmbrella\Mntone.AngelUmbrella.pri"/>
+
+		<file target="build\Mntone.AngelUmbrella.targets" src="Mntone.AngelUmbrella.targets"/>
+		<file target="build\native\Mntone.AngelUmbrella.targets" src="Mntone.AngelUmbrella.native.targets"/>
+	</files>
+</package>

@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<_AngelUmbrellaMetadataDir>$(MSBuildThisFileDirectory)..\..\lib\uap10.0.17763\</_AngelUmbrellaMetadataDir>
+		<_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths>true</_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="$(_AngelUmbrellaMetadataDir)*.winmd">
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+	<Import Project="$(MSBuildThisFileDirectory)..\Mntone.AngelUmbrella.targets"/>
+</Project>

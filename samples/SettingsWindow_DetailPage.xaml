@@ -1,0 +1,105 @@
+<Page x:Class="Mntone.AngelUmbrella.Samples.SettingsWindow_DetailPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:angel="using:Mntone.AngelUmbrella.UI.Controls"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  mc:Ignorable="d">
+
+	<ScrollViewer x:Name="scrollViewer">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="LayoutVisualStates">
+				<VisualState x:Name="WideLayout">
+					<VisualState.StateTriggers>
+						<AdaptiveTrigger MinWindowWidth="{StaticResource Breakpoint800Plus}" />
+					</VisualState.StateTriggers>
+				</VisualState>
+				<VisualState x:Name="NarrowLayout">
+					<VisualState.StateTriggers>
+						<AdaptiveTrigger MinWindowWidth="0" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+						<Setter Target="scrollViewer.Margin"
+								Value="0,48,0,0" />
+						<Setter Target="rootPanel.Margin"
+								Value="12,0,12,36" />
+					</VisualState.Setters>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+
+		<StackPanel x:Name="rootPanel"
+					Margin="24,0,24,36"
+					Spacing="24">
+			<angel:SettingsCard Header="Mock UI"
+								Description="This is sample UI. The function doesn't work!!" />
+
+			<StackPanel Spacing="2">
+				<TextBlock Text="Scale &amp; layout"
+						   Style="{StaticResource SettingsSubHeaderBlockStyle}" />
+
+				<angel:SettingsCard Header="Scale"
+									Description="Change the size of text, apps, and other items">
+					<ComboBox MinWidth="{StaticResource SettingsCardContentMinWidth}"
+							  SelectedIndex="0">
+						<ComboBoxItem>100% (Recommended)</ComboBoxItem>
+						<ComboBoxItem>125%</ComboBoxItem>
+						<ComboBoxItem>150%</ComboBoxItem>
+						<ComboBoxItem>175%</ComboBoxItem>
+						<ComboBoxItem>200%</ComboBoxItem>
+						<ComboBoxItem>250%</ComboBoxItem>
+					</ComboBox>
+				</angel:SettingsCard>
+
+				<angel:SettingsCard Header="Display resolution"
+									Description="Adjust the resolution to fit your connected display">
+					<ComboBox MinWidth="{StaticResource SettingsCardContentMinWidth}"
+							  SelectedIndex="1">
+						<ComboBoxItem>1024x768</ComboBoxItem>
+						<ComboBoxItem>1920x1080</ComboBoxItem>
+					</ComboBox>
+				</angel:SettingsCard>
+
+				<angel:SettingsCard Header="Display orientation"
+									IsEnabled="False">
+					<ComboBox MinWidth="{StaticResource SettingsCardContentMinWidth}"
+							  SelectedIndex="0">
+						<ComboBoxItem>Landscape</ComboBoxItem>
+						<ComboBoxItem>Portrait</ComboBoxItem>
+					</ComboBox>
+				</angel:SettingsCard>
+
+				<angel:SettingsExpander Header="Multiple displays"
+										Description="Choose the presentation mode for your displays">
+					<angel:SettingsExpander.ExpanderContent>
+						<StackPanel>
+							<angel:SettingsCard Style="{StaticResource SettingsMiddleCardAltStyle}">
+								<CheckBox Content="Remember window locations based on monitor connection" />
+							</angel:SettingsCard>
+							<angel:SettingsCard Style="{StaticResource SettingsMiddleCardAltStyle}">
+								<CheckBox Content="Minimize windows when a monitor is disconnected" />
+							</angel:SettingsCard>
+							<angel:SettingsCard Header="Detect other display"
+												Style="{StaticResource SettingsBottomCardAltStyle}">
+								<Button Content="Detect"
+										MinWidth="{StaticResource SettingsCardContentMinWidth}" />
+							</angel:SettingsCard>
+						</StackPanel>
+					</angel:SettingsExpander.ExpanderContent>
+				</angel:SettingsExpander>
+			</StackPanel>
+
+			<StackPanel Spacing="2">
+				<TextBlock Text="Related settings"
+						   Style="{StaticResource SettingsSubHeaderBlockStyle}" />
+
+				<angel:SettingsCard Header="Advanced display"
+									Description="Display information, refresh rate"
+									IsClickEnabled="True" />
+
+				<angel:SettingsCard Header="Graphics"
+									IsClickEnabled="True" />
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</Page>

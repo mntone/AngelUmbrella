@@ -1,0 +1,50 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- PlatformTarget takes precedence over the Platform specified and indicates which platform will actually be targeted -->
+		<_AngelUmbrellaPlatformTarget Condition="'$(_AngelUmbrellaPlatformTarget)'=='' and '$(PlatformTarget)'!=''">$(PlatformTarget)</_AngelUmbrellaPlatformTarget>
+		<_AngelUmbrellaPlatformTarget Condition="'$(_AngelUmbrellaPlatformTarget)'=='' and '$(Platform)'=='Win32'">x86</_AngelUmbrellaPlatformTarget>
+		<_AngelUmbrellaPlatformTarget Condition="'$(_AngelUmbrellaPlatformTarget)'==''">$(Platform)</_AngelUmbrellaPlatformTarget>
+	</PropertyGroup>
+	<Target Name="ValidateAngelUmbrellaPlatform"
+			Condition="'$(_AngelUmbrellaPlatformTarget)' == 'ARM'"
+			BeforeTargets="PrepareForBuild">
+		<Error Text="This version of Angel Umbrella does not support $(_AngelUmbrellaPlatformTarget). Set either 'Platform' or 'PlatformTarget' to one of the following: AnyCPU, x86, x64, or arm64." />
+	</Target>
+
+	<PropertyGroup>
+		<_AngelUmbrellaTargetPlatformMinVersion Condition="'$(TargetPlatformVersion)' != ''">$([System.Version]::Parse('$(TargetPlatformMinVersion)').Build)</_AngelUmbrellaTargetPlatformMinVersion>
+	</PropertyGroup>
+	<Target Name="ValidateAngelUmbrellaTargetPlatformMinVersion"
+			Condition="$(_AngelUmbrellaTargetPlatformMinVersion) &lt; 17763"
+			BeforeTargets="PrepareForBuild">
+		<Error Text="This version of Angel Umbrella does not support 10.0.$(_AngelUmbrellaTargetPlatformMinVersion).0. Set TargetPlatformMinVersion &gt;= 10.0.17763.0." />
+	</Target>
+
+	<PropertyGroup>
+		<_AngelUmbrellaRuntimeIdentifier>win10-$(_AngelUmbrellaPlatformTarget)</_AngelUmbrellaRuntimeIdentifier>
+		<_AngelUmbrellaDllDir>$(MSBuildThisFileDirectory)..\runtimes\$(_AngelUmbrellaRuntimeIdentifier)\lib\uap10.0.17763\</_AngelUmbrellaDllDir>
+
+		<_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths Condition="'$(_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths)'=='' AND '$(Platform)' == 'AnyCPU'">false</_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths>
+		<_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths Condition="'$(_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths)'==''">true</_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths)' == 'true'">
+		<ReferenceCopyLocalPaths Include="$(_AngelUmbrellaDllDir)*.dll" />
+		<ReferenceCopyLocalPaths Include="$(_AngelUmbrellaDllDir)*.pri" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<CsWinRTInputs Include="$(MSBuildThisFileDirectory)..\lib\uap10.0.17763\*.winmd" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP' and '$(_AddAngelUmbrellaAssembliesToReferenceCopyLocalPaths)' != 'true'" >
+		<ResolveAssemblyReferencesDependsOn>ReferenceAngelUmbrellaUapMetadata;$(ResolveAssemblyReferencesDependsOn)</ResolveAssemblyReferencesDependsOn>
+	</PropertyGroup>
+
+	<Target Name="ReferenceAngelUmbrellaUapMetadata">
+		<ItemGroup>
+			<_AngelUmbrellaUapMetadata Include="$(MSBuildThisFileDirectory)..\lib\uap10.0.17763\Mntone.AngelUmbrella.winmd" />
+			<Reference Include="@(_AngelUmbrellaUapMetadata)" />
+		</ItemGroup>
+	</Target>
+</Project>

@@ -1,0 +1,8 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+	[interface_name("ISettingsWindow", 84884EF1-F720-4790-9016-89F1C1E06B12)]
+    runtimeclass SettingsWindow : Microsoft.UI.Xaml.Window
+    {
+        SettingsWindow();
+    }
+}

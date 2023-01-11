@@ -1,0 +1,26 @@
+# Files which are explicitly binary
+*.gif                binary filter=lfs diff=lfs merge=lfs !eol
+*.jpg                binary filter=lfs diff=lfs merge=lfs !eol
+*.png                binary filter=lfs diff=lfs merge=lfs !eol
+
+# Files normalized to always keep Unix line endings
+.editorconfig        text encoding=utf-8 eol=lf
+.gitattributes       text encoding=utf-8 eol=lf
+.gitignore           text encoding=utf-8 eol=lf
+*.txt                text encoding=utf-8 eol=lf
+*.md                 text encoding=utf-8 eol=lf
+*.def                text encoding=utf-8 eol=lf
+*.rc                 text encoding=utf-8 eol=lf
+*.idl                text encoding=utf-8 eol=lf
+*.[ch]               text encoding=utf-8 eol=lf
+*.[ch]pp             text encoding=utf-8 eol=lf
+app.manifest         text encoding=utf-8 eol=lf
+
+# Files normalized to always keep Windows line endings
+*.resw               text encoding=utf-8-bom eol=crlf
+*.xaml               text encoding=utf-8 eol=crlf
+*.sln                text encoding=utf-8-bom eol=crlf
+*.vcxproj            text encoding=utf-8 eol=crlf
+*.vcxproj.filters    text encoding=utf-8-bom eol=crlf
+packages.config      text encoding=utf-8-bom eol=crlf
+Package.appxmanifest text encoding=utf-8-bom eol=lf

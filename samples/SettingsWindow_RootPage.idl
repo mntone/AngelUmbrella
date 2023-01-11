@@ -1,0 +1,10 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+
+	[interface_name("ISettingsWindow_RootPage", 9F165D5A-3819-4F0E-9CC7-61DA583E47F8)]
+    runtimeclass SettingsWindow_RootPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        SettingsWindow_RootPage();
+    }
+
+}

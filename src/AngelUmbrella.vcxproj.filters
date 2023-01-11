@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{e4cfde82-f621-42f3-aa13-dad288a8f072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{12d04b74-4cc5-4748-b2b6-bb06197d3251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Controls">
+      <UniqueIdentifier>{5e26f4a9-4ad9-4d62-b29e-2db72a4e6798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Helpers">
+      <UniqueIdentifier>{8f11473a-6b74-4842-947b-75465ff413db}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AngelUmbrella.def" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AngelUmbrella.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\idl\AngelUmbrella.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\Controls\SettingsCard.xaml">
+      <Filter>UI\Controls</Filter>
+    </Page>
+    <Page Include="UI\Controls\SettingsExpander.xaml">
+      <Filter>UI\Controls</Filter>
+    </Page>
+    <Page Include="UI\Controls\SettingsPanel.xaml">
+      <Filter>UI\Controls</Filter>
+    </Page>
+    <Page Include="Themes\Generic.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="Helpers\ValueHelper.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Helpers\DependencyPropertyHelper.h">
+      <Filter>UI\Helpers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+  </ItemGroup>
+</Project>
