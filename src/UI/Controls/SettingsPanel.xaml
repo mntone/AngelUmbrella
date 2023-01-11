@@ -23,10 +23,6 @@
 				Value="Right" />
 		<Setter Property="IsTabStop"
 				Value="False" />
-		<Setter Property="Margin"
-				Value="0" />
-		<Setter Property="Padding"
-				Value="{StaticResource SettingsCardPadding}" />
 		<Setter Property="UseSystemFocusVisuals"
 				Value="{StaticResource UseSystemFocusVisuals}" />
 		<Setter Property="VerticalContentAlignment"
@@ -37,8 +33,6 @@
 					<Grid x:Name="RootGrid"
 						  AnimatedIcon.State="Normal"
 						  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-						  Margin="{TemplateBinding Margin}"
-						  Padding="{TemplateBinding Padding}"
 						  VerticalAlignment="{TemplateBinding VerticalAlignment}">
 						<VisualStateManager.VisualStateGroups>
 							<VisualStateGroup x:Name="Orientation">
@@ -58,6 +52,8 @@
 								<VisualState x:Name="HeaderOnly" />
 								<VisualState x:Name="HeaderAndDescription">
 									<VisualState.Setters>
+										<Setter Target="Description.Visibility"
+												Value="Visible" />
 										<Setter Target="Header.TextLineBounds"
 												Value="TrimToCapHeight" />
 									</VisualState.Setters>
@@ -91,7 +87,6 @@
 						</Viewbox>
 
 						<StackPanel Grid.Column="1"
-									Margin="0,0,16,0"
 									VerticalAlignment="Center">
 							<ContentPresenter x:Name="Header"
 											  Content="{TemplateBinding Header}"
@@ -101,7 +96,8 @@
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 											  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
 											  Margin="0,0,0,-1"
-											  TextWrapping="Wrap" />
+											  TextWrapping="Wrap"
+											  Visibility="Collapsed" />
 						</StackPanel>
 
 						<ContentPresenter x:Name="Content"

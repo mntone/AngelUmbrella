@@ -119,7 +119,7 @@
 		<Setter Property="MinWidth"
 				Value="{StaticResource SettingsCardMinWidth}" />
 		<Setter Property="Padding"
-				Value="0" />
+				Value="{StaticResource SettingsCardPadding}" />
 		<Setter Property="TabNavigation"
 				Value="Local" />
 		<Setter Property="VerticalContentAlignment"
@@ -136,6 +136,7 @@
 						  Control.IsTemplateFocusTarget="True"
 						  CornerRadius="{TemplateBinding CornerRadius}"
 						  FocusVisualMargin="{TemplateBinding FocusVisualMargin}"
+						  Padding="{TemplateBinding Padding}"
 						  RenderTransformOrigin=".5,.5">
 						<VisualStateManager.VisualStateGroups>
 							<VisualStateGroup x:Name="CommonStates">
@@ -339,14 +340,12 @@
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
 											  Content="{TemplateBinding Content}"
 											  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-											  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-											  Margin="{TemplateBinding Padding}" />
+											  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 						</Grid>
 						<TextBlock x:Name="PlaceholderTextBlock"
 								   Opacity="0"
 								   Text="Xg"
 								   Foreground="{x:Null}"
-								   Margin="{TemplateBinding Padding}"
 								   IsHitTestVisible="False"
 								   AutomationProperties.AccessibilityView="Raw" />
 						<Rectangle x:Name="PlaceholderRect"
@@ -359,13 +358,14 @@
 								  FontSize="12"
 								  Foreground="{TemplateBinding Foreground}"
 								  Glyph="{StaticResource CardListViewItemChevronRightGlyph}"
-								  Height="{StaticResource SettingsCardActionIconMaxSize}"
+								  Height="{StaticResource SettingsCardActionButtonHeight}"
 								  HighContrastAdjustment="None"
-								  HorizontalAlignment="Right"
+								  HorizontalAlignment="Center"
 								  IsTextScaleFactorEnabled="False"
-								  Margin="4,0,15,0"
+								  Margin="{StaticResource SettingsCardActionButtonMargin}"
 								  ToolTipService.ToolTip="More"
-								  VerticalAlignment="Center" />
+								  VerticalAlignment="Center"
+								  Width="{StaticResource SettingsCardActionButtonWidth}" />
 					</Grid>
 				</ControlTemplate>
 			</Setter.Value>

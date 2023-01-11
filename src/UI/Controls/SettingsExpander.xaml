@@ -128,12 +128,17 @@
 										FontFamily="{StaticResource SymbolThemeFontFamily}"
 										FontSize="12"
 										Foreground="{TemplateBinding Foreground}"
+										Height="{StaticResource SettingsCardActionButtonHeight}"
 										HighContrastAdjustment="None"
 										HorizontalAlignment="Right"
-										IsTabStop="False"
+										HorizontalContentAlignment="Center"
+										IsTabStop="True"
 										IsTextScaleFactorEnabled="False"
-										Margin="12,0,-4,0"
-										VerticalAlignment="Center">
+										Margin="{StaticResource SettingsCardActionButtonMargin}"
+										UseSystemFocusVisuals="{TemplateBinding UseSystemFocusVisuals}"
+										VerticalAlignment="Center"
+										VerticalContentAlignment="Center"
+										Width="{StaticResource SettingsCardActionButtonWidth}">
 							<AnimatedIcon x:Name="ExpandCollapseChevron"
 										  AnimatedIcon.State="NormalOff"
 										  Height="{StaticResource SettingsCardActionIconMaxSize}"
@@ -312,6 +317,8 @@
 								<VisualState x:Name="HeaderOnly" />
 								<VisualState x:Name="HeaderAndDescription">
 									<VisualState.Setters>
+										<Setter Target="Description.Visibility"
+												Value="Visible" />
 										<Setter Target="Header.TextLineBounds"
 												Value="TrimToCapHeight" />
 									</VisualState.Setters>
@@ -335,7 +342,7 @@
 									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 									  IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
 									  IsEnabled="{TemplateBinding IsEnabled}"
-									  IsTabStop="True"
+									  IsTabStop="False"
 									  MinHeight="{TemplateBinding MinHeight}"
 									  Padding="{TemplateBinding Padding}"
 									  Style="{StaticResource SettingsExpanderHeaderDownStyle}">
@@ -375,7 +382,8 @@
 													  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 													  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
 													  Margin="0,0,0,-1"
-													  TextWrapping="Wrap" />
+													  TextWrapping="Wrap"
+													  Visibility="Collapsed" />
 								</StackPanel>
 
 								<ContentPresenter x:Name="Content"

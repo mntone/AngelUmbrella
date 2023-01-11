@@ -128,6 +128,8 @@
 								<VisualState x:Name="HeaderOnly" />
 								<VisualState x:Name="HeaderAndDescription">
 									<VisualState.Setters>
+										<Setter Target="Description.Visibility"
+												Value="Visible" />
 										<Setter Target="Header.TextLineBounds"
 												Value="TrimToCapHeight" />
 									</VisualState.Setters>
@@ -176,7 +178,8 @@
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 											  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
 											  Margin="0,0,0,-1"
-											  TextWrapping="Wrap" />
+											  TextWrapping="Wrap"
+											  Visibility="Collapsed" />
 						</StackPanel>
 
 						<ContentPresenter x:Name="Content"
@@ -191,17 +194,22 @@
 										FontFamily="{StaticResource SymbolThemeFontFamily}"
 										FontSize="12"
 										Foreground="{TemplateBinding Foreground}"
-										HorizontalAlignment="Right"
+										Height="{StaticResource SettingsCardActionButtonHeight}"
 										HighContrastAdjustment="None"
+										HorizontalAlignment="Right"
+										HorizontalContentAlignment="Center"
 										IsTabStop="False"
 										IsTextScaleFactorEnabled="False"
-										Margin="4,0,0,0"
-										VerticalAlignment="Center">
+										Margin="{StaticResource SettingsCardActionButtonMargin}"
+										ToolTipService.ToolTip="{TemplateBinding ActionIconTooltip}"
+										VerticalAlignment="Center"
+										VerticalContentAlignment="Center"
+										Width="{StaticResource SettingsCardActionButtonWidth}">
 							<Viewbox Height="{StaticResource SettingsCardActionIconMaxSize}"
+									 HorizontalAlignment="Center"
 									 StretchDirection="DownOnly"
-									 ToolTipService.ToolTip="{TemplateBinding ActionIconTooltip}">
-								<ContentPresenter Content="{TemplateBinding ActionIcon}"
-												  HighContrastAdjustment="None" />
+									 VerticalAlignment="Center">
+								<ContentPresenter Content="{TemplateBinding ActionIcon}" />
 							</Viewbox>
 						</ContentControl>
 					</Grid>

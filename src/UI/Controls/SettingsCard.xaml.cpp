@@ -138,13 +138,7 @@ void SettingsCard::OnButtonIconChanged(bool isClickEnabled) {
 void SettingsCard::OnDescriptionChanged(IInspectable const& newValue) {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
-		if (ValueHelper<IInspectable>::HasValue(newValue)) {
-			element.Visibility(Visibility::Visible);
-			VisualStateManager::GoToState(*this, states::HeaderAndDescription, true);
-		} else {
-			element.Visibility(Visibility::Collapsed);
-			VisualStateManager::GoToState(*this, states::HeaderOnly, true);
-		}
+		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
 	}
 }
 

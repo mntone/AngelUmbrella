@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AngelVersionMajor>1</AngelVersionMajor>
 		<AngelVersionMinor>0</AngelVersionMinor>
-		<AngelVersionPatch>0</AngelVersionPatch>
+		<AngelVersionPatch>1</AngelVersionPatch>
 		<AngelVersionBuild Condition="$(AngelVersionBuild) == ''">0</AngelVersionBuild>
 		<AngelVersionRevision Condition="$(AngelVersionRevision) == ''">0</AngelVersionRevision>
 	</PropertyGroup>

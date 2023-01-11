@@ -20,6 +20,7 @@
   <ItemGroup>
     <None Include="AngelUmbrella.def" />
     <None Include="packages.config" />
+    <None Include="version.props" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AngelUmbrella.rc" />

@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="AngelUmbrella.def" />
+    <None Include="version.props" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

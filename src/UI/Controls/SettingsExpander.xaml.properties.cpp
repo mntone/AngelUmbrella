@@ -20,11 +20,19 @@ void SettingsExpander::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_PARENT_TYPENAME(SettingsExpander);
 
-	DEFINE_DP(Description, winrt::IInspectable, SettingsExpander);
+	DEFINE_DP_CALLBACK(
+		Description,
+		winrt::IInspectable,
+		SettingsExpander,
+		&SettingsExpander::OnDescriptionChangedStatic);
 
 	DEFINE_DP(ExpanderContent, winrt::IInspectable, SettingsExpander);
 
-	DEFINE_DP(HeaderIcon, winrt::Microsoft::UI::Xaml::Controls::IconElement, SettingsExpander);
+	DEFINE_DP_CALLBACK(
+		HeaderIcon,
+		winrt::Microsoft::UI::Xaml::Controls::IconElement,
+		SettingsExpander,
+		&SettingsExpander::OnHeaderIconChangedStatic);
 
 	DEFINE_DP_METADATA(
 		Orientation,
