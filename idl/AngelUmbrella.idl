@@ -1,5 +1,22 @@
 namespace Mntone.AngelUmbrella
 {
+	namespace Converters
+	{
+
+		[interface_name("IBooleanToVisibilityConverter", 21B28859-FCD9-4864-AC23-22C222C33DC6)]
+	    runtimeclass BooleanToVisibilityConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    BooleanToVisibilityConverter();
+		}
+
+		[interface_name("IInvertedBooleanConverter", 0CA51023-05A7-474E-9EC2-00E6F1AFD194)]
+	    runtimeclass InvertedBooleanConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    InvertedBooleanConverter();
+		}
+
+	}
+
 	namespace UI
 	{
 		namespace Controls

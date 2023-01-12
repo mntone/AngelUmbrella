@@ -74,10 +74,12 @@
 					<angel:SettingsExpander.ExpanderContent>
 						<StackPanel>
 							<angel:SettingsCard Style="{StaticResource SettingsMiddleCardAltStyle}">
-								<CheckBox Content="Remember window locations based on monitor connection" />
+								<CheckBox x:Name="rememberWindowLocations"
+										  Content="Remember window locations based on monitor connection" />
 							</angel:SettingsCard>
 							<angel:SettingsCard Style="{StaticResource SettingsMiddleCardAltStyle}">
-								<CheckBox Content="Minimize windows when a monitor is disconnected" />
+								<CheckBox Content="Minimize windows when a monitor is disconnected"
+										  IsChecked="{Binding IsChecked, Converter={StaticResource InvertedBooleanConverter}, ElementName=rememberWindowLocations, Mode=TwoWay}" />
 							</angel:SettingsCard>
 							<angel:SettingsCard Header="Detect other display"
 												Style="{StaticResource SettingsBottomCardAltStyle}">

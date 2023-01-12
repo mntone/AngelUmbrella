@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AngelUmbrella.Samples", "sa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AngelUmbrella", "src\AngelUmbrella.vcxproj", "{7DEE9635-B417-49F9-A823-05DC99C0B4BA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelUmbrella.Tests", "test\Mntone.AngelUmbrella.Tests.csproj", "{4CB58687-C360-47B5-A127-B449815E1A43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -47,6 +49,18 @@ Global
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x64.Build.0 = Release|x64
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x86.ActiveCfg = Release|Win32
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x86.Build.0 = Release|Win32
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|ARM64.ActiveCfg = Debug|arm64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|ARM64.Build.0 = Debug|arm64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|x64.ActiveCfg = Debug|x64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|x64.Build.0 = Debug|x64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|x86.ActiveCfg = Debug|x86
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|x86.Build.0 = Debug|x86
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|ARM64.ActiveCfg = Release|arm64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|ARM64.Build.0 = Release|arm64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|x64.ActiveCfg = Release|x64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|x64.Build.0 = Release|x64
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|x86.ActiveCfg = Release|x86
+		{4CB58687-C360-47B5-A127-B449815E1A43}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

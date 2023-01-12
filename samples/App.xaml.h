@@ -1,5 +1,6 @@
 #pragma once
 #include "App.xaml.g.h"
+#include <winrt/Mntone.AngelUmbrella.Converters.h>
 
 namespace winrt::Mntone::AngelUmbrella::Samples::implementation {
 

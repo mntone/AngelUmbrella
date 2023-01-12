@@ -57,6 +57,7 @@
   </ItemGroup>
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DesktopCompatible>true</DesktopCompatible>
     <PlatformToolset>v143</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '16.0'">v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -155,6 +156,8 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
+    <ClInclude Include="Converters\BooleanToVisibilityConverter.h" />
+    <ClInclude Include="Converters\InvertedBooleanConverter.h" />
     <ClInclude Include="Helpers\ValueHelper.h" />
     <ClInclude Include="UI\Controls\SettingsCard.xaml.h">
       <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
@@ -172,6 +175,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp" />
+    <ClCompile Include="Converters\InvertedBooleanConverter.cpp" />
     <ClCompile Include="UI\Controls\SettingsCard.xaml.cpp">
       <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
     </ClCompile>
