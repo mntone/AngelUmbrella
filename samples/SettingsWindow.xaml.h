@@ -40,9 +40,9 @@ namespace winrt::Mntone::AngelUmbrella::Samples::implementation {
 
 }
 
-namespace winrt::Mntone::AngelUmbrella::Samples::factory_implementation {
-
-	struct SettingsWindow: SettingsWindowT<SettingsWindow, implementation::SettingsWindow> {
-	};
-
-}
+//namespace winrt::Mntone::AngelUmbrella::Samples::factory_implementation {
+//
+//	struct SettingsWindow: SettingsWindowT<SettingsWindow, implementation::SettingsWindow> {
+//	};
+//
+//}
