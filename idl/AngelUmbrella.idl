@@ -15,6 +15,24 @@ namespace Mntone.AngelUmbrella
 		    InvertedBooleanConverter();
 		}
 
+		[interface_name("ISingleToVector3AsXConverter", 9FC2ED6A-EFBC-452F-BF32-67D5244B7D7A)]
+	    runtimeclass SingleToVector3AsXConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    SingleToVector3AsXConverter();
+		}
+
+		[interface_name("ISingleToVector3AsYConverter", D09F0480-39E7-4B6B-B4F6-2C7D37721214)]
+	    runtimeclass SingleToVector3AsYConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    SingleToVector3AsYConverter();
+		}
+
+		[interface_name("ISingleToVector3AsZConverter", FF8D7E86-50C1-46AF-8307-BED875169238)]
+	    runtimeclass SingleToVector3AsZConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    SingleToVector3AsZConverter();
+		}
+
 	}
 
 	namespace UI

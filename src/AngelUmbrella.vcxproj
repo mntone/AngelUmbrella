@@ -154,6 +154,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Converters\SingleToVector3AsXConverter.h" />
+    <ClInclude Include="Converters\SingleToVector3AsYConverter.h" />
+    <ClInclude Include="Converters\SingleToVector3AsZConverter.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h" />
@@ -171,6 +174,9 @@
     <ClInclude Include="UI\Helpers\DependencyPropertyHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Converters\SingleToVector3AsXConverter.cpp" />
+    <ClCompile Include="Converters\SingleToVector3AsYConverter.cpp" />
+    <ClCompile Include="Converters\SingleToVector3AsZConverter.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
