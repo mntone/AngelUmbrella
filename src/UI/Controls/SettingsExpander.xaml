@@ -3,7 +3,7 @@
 					xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
 					xmlns:ctrl="using:Mntone.AngelUmbrella.UI.Controls">
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceDictionary Source="/Mntone.AngelUmbrella/UI/Controls/SettingsCard_themeresources.xaml" />
+		<ResourceDictionary Source="ms-appx:///Mntone.AngelUmbrella/UI/Controls/SettingsCard_themeresources.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 
 	<Style x:Key="SettingsExpanderHeaderDownStyle"
