@@ -22,7 +22,7 @@ BEGIN
 			VALUE "FileDescription", "Mntone.AngelUmbrella.dll"
 			VALUE "FileVersion", VER_FILE_VERSION_STR "\0"
 			VALUE "InternalName", "Mntone.AngelUmbrella.dll"
-			VALUE "LegalCopyright", "Copyright (c) 2022 mntone. All rights reserved."
+			VALUE "LegalCopyright", "Copyright (c) 2023 mntone. All rights reserved."
 			VALUE "OriginalFilename", "Mntone.AngelUmbrella.dll"
 			VALUE "ProductName", "Angel Umbrella"
 			VALUE "ProductVersion", VER_PRODUCT_VERSION_STR "\0"

@@ -9,7 +9,7 @@
 		<license type="file">license.txt</license>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<description>Mntone WinUI 3 Library</description>
-		<copyright>Copyright © 2022 mntone</copyright>
+		<copyright>Copyright © 2023 mntone</copyright>
 		<language>en-US</language>
 		<tags>Win Windows WinRT WinUI WinAppSDK WindowsAppSDK mntone Cpp Native UI Settings Config</tags>
 		<dependencies>
