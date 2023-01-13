@@ -4,7 +4,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
-    <CsWinRTIncludes>Mntone.AngelUmbrella</CsWinRTIncludes>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
@@ -14,6 +13,17 @@
     <WindowsAppContainer>true</WindowsAppContainer>
     <UseWinUI>true</UseWinUI>
     <SupportedOSPlatformVersion>10.0.18362.0</SupportedOSPlatformVersion>
+    <AssemblyName>Mntone.AngelUmbrella.Tests</AssemblyName>
+    <RootNamespace>Mntone.AngelUmbrella.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PlatformFolder Condition="'$(Platform)'=='x86'">Win32</PlatformFolder>
+    <PlatformFolder Condition="'$(Platform)'!='x86'">$(Platform)</PlatformFolder>
+    <OutputPath>$(SolutionDir)bin\$(PlatformFolder)-$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+    <IntermediateOutputPath>$(SolutionDir)obj\$(PlatformFolder)-$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\AngelUmbrella.vcxproj" />
+    <ProjectReference Include="..\projection\AngelUmbrella.projection.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AngelUmbrella.Samples", "sa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AngelUmbrella", "src\AngelUmbrella.vcxproj", "{7DEE9635-B417-49F9-A823-05DC99C0B4BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelUmbrella.Tests", "test\Mntone.AngelUmbrella.Tests.csproj", "{4CB58687-C360-47B5-A127-B449815E1A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelUmbrella.projection", "projection\AngelUmbrella.projection.csproj", "{125CD993-CA7B-4F60-AE20-E9075E164B1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelUmbrella.Tests", "test\AngelUmbrella.Tests.csproj", "{4CB58687-C360-47B5-A127-B449815E1A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,18 @@ Global
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x64.Build.0 = Release|x64
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x86.ActiveCfg = Release|Win32
 		{7DEE9635-B417-49F9-A823-05DC99C0B4BA}.Release|x86.Build.0 = Release|Win32
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|x64.Build.0 = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Debug|x86.Build.0 = Debug|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|ARM64.Build.0 = Release|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|x64.ActiveCfg = Release|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|x64.Build.0 = Release|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|x86.ActiveCfg = Release|Any CPU
+		{125CD993-CA7B-4F60-AE20-E9075E164B1B}.Release|x86.Build.0 = Release|Any CPU
 		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|ARM64.ActiveCfg = Debug|arm64
 		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|ARM64.Build.0 = Debug|arm64
 		{4CB58687-C360-47B5-A127-B449815E1A43}.Debug|x64.ActiveCfg = Debug|x64

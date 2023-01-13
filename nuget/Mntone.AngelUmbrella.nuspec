@@ -29,6 +29,8 @@
 		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsExpander.xaml"/>
 		<file target="lib\uap10.0.17763\Mntone.AngelUmbrella\UI\Controls" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella\UI\Controls\SettingsPanel.xaml"/>
 
+		<file target="lib\net6.0-windows10.0.17763.0" src="..\bin\AnyCPU-Release\AngelUmbrella.projection\Mntone.AngelUmbrella.projection.dll"/>
+
 		<file target="runtimes\win10-x86\lib\uap10.0.17763" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella.dll"/>
 		<file target="runtimes\win10-x86\lib\uap10.0.17763" src="..\bin\Win32-Release\AngelUmbrella\Mntone.AngelUmbrella.pri"/>
 	

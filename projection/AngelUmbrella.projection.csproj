@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <AssemblyName>Mntone.AngelUmbrella.projection</AssemblyName>
+    <RootNamespace>Mntone.AngelUmbrella</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CsWinRTIncludes>Mntone.AngelUmbrella</CsWinRTIncludes>
+    <CsWinRTIIDOptimizerOptOut>true</CsWinRTIIDOptimizerOptOut>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PlatformFolder Condition="'$(Platform)'=='x86'">Win32</PlatformFolder>
+    <PlatformFolder Condition="'$(Platform)'!='x86'">$(Platform)</PlatformFolder>
+    <OutputPath>$(SolutionDir)bin\$(PlatformFolder)-$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+    <IntermediateOutputPath>$(SolutionDir)obj\$(PlatformFolder)-$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <Import Project="$(SolutionDir)src\version.props" />
+
+  <PropertyGroup>
+    <Product>Angel Umbrella (C# projection)</Product>
+    <VersionPrefix>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)</VersionPrefix>
+    <AssemblyVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionBuild).$(AngelVersionRevision)</AssemblyVersion>
+    <FileVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionBuild).$(AngelVersionRevision)</FileVersion>
+    <Authors>mntone</Authors>
+    <Copyright>Copyright (c) 2023 mntone. All rights reserved.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.1" />
+      <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
+      <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\AngelUmbrella.vcxproj" />
+  </ItemGroup>
+</Project>
