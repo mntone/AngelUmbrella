@@ -6,16 +6,16 @@ namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation {
 	struct SettingsPanel: SettingsPanel_base<SettingsPanel> {
 		SettingsPanel() noexcept;
 
-		void OnApplyTemplate();
+		void OnApplyTemplate() const;
 
 	private:
-		inline void OnButtonIconChanged(bool isClickEnabled);
+		inline void OnButtonIconChanged(bool isClickEnabled) const;
 
 	public:
-		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue);
-		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue);
+		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
+		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue) const;
 		inline void OnHeaderChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
-		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue);
+		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue) const;
 
 	private:
 		static void OnDescriptionChangedStatic(winrt::Microsoft::UI::Xaml::DependencyObject const& sender, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& args);

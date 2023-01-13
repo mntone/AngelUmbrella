@@ -42,7 +42,7 @@ SettingsPanel::SettingsPanel() noexcept {
 	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_UI_Controls_SettingsPanel_Uri });
 }
 
-void SettingsPanel::OnApplyTemplate() {
+void SettingsPanel::OnApplyTemplate() const {
 	__super::OnApplyTemplate();
 
 	OnOrientationChanged(Orientation());
@@ -51,21 +51,21 @@ void SettingsPanel::OnApplyTemplate() {
 	OnHeaderIconChanged(HeaderIcon());
 }
 
-void SettingsPanel::OnButtonIconChanged(bool isClickEnabled) {
+void SettingsPanel::OnButtonIconChanged(bool isClickEnabled) const {
 	FrameworkElement element { GetTemplateChild(controls::ActionIcon).try_as<FrameworkElement>() };
 	if (element) {
 		element.Visibility(isClickEnabled ? Visibility::Visible : Visibility::Collapsed);
 	}
 }
 
-void SettingsPanel::OnDescriptionChanged(IInspectable const& newValue) {
+void SettingsPanel::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
 		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
 	}
 }
 
-void SettingsPanel::OnHeaderIconChanged(IconElement const& newValue) {
+void SettingsPanel::OnHeaderIconChanged(IconElement const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::HeaderIcon).try_as<FrameworkElement>() };
 	if (element) {
 		element.Visibility(newValue != nullptr ? Visibility::Visible : Visibility::Collapsed);
@@ -79,7 +79,7 @@ void SettingsPanel::OnHeaderChanged(IInspectable const& newValue) const {
 	}
 }
 
-void SettingsPanel::OnOrientationChanged(winrt::Orientation newValue) {
+void SettingsPanel::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
 		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
 	} else {
@@ -92,8 +92,7 @@ void SettingsPanel::OnDescriptionChangedStatic(DependencyObject const& sender, D
 }
 
 void SettingsPanel::OnHeaderIconChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
-	get_self<SettingsPanel>(sender.as<winrt::SettingsPanel>())->OnHeaderIconChanged(
-		args.NewValue().as<Microsoft::UI::Xaml::Controls::IconElement>());
+	get_self<SettingsPanel>(sender.as<winrt::SettingsPanel>())->OnHeaderIconChanged(args.NewValue().as<IconElement>());
 }
 
 void SettingsPanel::OnHeaderChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
@@ -102,5 +101,5 @@ void SettingsPanel::OnHeaderChangedStatic(DependencyObject const& sender, Depend
 
 void SettingsPanel::OnOrientationChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
 	get_self<SettingsPanel>(sender.as<winrt::SettingsPanel>())->OnOrientationChanged(
-		winrt::unbox_value<winrt::Orientation>(args.NewValue()));
+		unbox_value<winrt::Orientation>(args.NewValue()));
 }

@@ -45,7 +45,7 @@ SettingsExpander::SettingsExpander() noexcept {
 	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_UI_Controls_SettingsExpander_Uri });
 }
 
-void SettingsExpander::OnApplyTemplate() {
+void SettingsExpander::OnApplyTemplate() const {
 	__super::OnApplyTemplate();
 
 	OnOrientationChanged(Orientation());
@@ -70,21 +70,21 @@ void SettingsExpander::OnPointerExited(PointerRoutedEventArgs const& args) const
 	VisualStateManager::GoToState(*this, states::Normal, true);
 }
 
-void SettingsExpander::OnDescriptionChanged(IInspectable const& newValue) {
+void SettingsExpander::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
 		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
 	}
 }
 
-void SettingsExpander::OnHeaderIconChanged(IconElement const& newValue) {
+void SettingsExpander::OnHeaderIconChanged(IconElement const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::HeaderIcon).try_as<FrameworkElement>() };
 	if (element) {
 		element.Visibility(ValueHelper<IInspectable>::HasValue(newValue) ? Visibility::Visible : Visibility::Collapsed);
 	}
 }
 
-void SettingsExpander::OnOrientationChanged(winrt::Orientation newValue) {
+void SettingsExpander::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
 		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
 	} else {
@@ -97,11 +97,10 @@ void SettingsExpander::OnDescriptionChangedStatic(DependencyObject const& sender
 }
 
 void SettingsExpander::OnHeaderIconChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
-	get_self<SettingsExpander>(sender.as<winrt::SettingsExpander>())->OnHeaderIconChanged(
-		args.NewValue().as<Microsoft::UI::Xaml::Controls::IconElement>());
+	get_self<SettingsExpander>(sender.as<winrt::SettingsExpander>())->OnHeaderIconChanged(args.NewValue().as<IconElement>());
 }
 
 void SettingsExpander::OnOrientationChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
 	get_self<SettingsExpander>(sender.as<winrt::SettingsExpander>())->OnOrientationChanged(
-		winrt::unbox_value<winrt::Orientation>(args.NewValue()));
+		unbox_value<winrt::Orientation>(args.NewValue()));
 }

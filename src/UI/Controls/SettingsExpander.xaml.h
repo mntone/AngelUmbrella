@@ -6,7 +6,7 @@ namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation {
 	struct SettingsExpander: SettingsExpander_base<SettingsExpander> {
 		SettingsExpander() noexcept;
 
-		void OnApplyTemplate();
+		void OnApplyTemplate() const;
 
 		void OnPointerEntered(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
 		void OnPointerExited(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
@@ -15,9 +15,9 @@ namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation {
 		static void OnIsEnabledChangedStatic(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& args);
 
 	public:
-		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue);
-		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue);
-		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue);
+		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
+		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue) const;
+		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue) const;
 
 	private:
 		static void OnDescriptionChangedStatic(winrt::Microsoft::UI::Xaml::DependencyObject const& sender, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& args);

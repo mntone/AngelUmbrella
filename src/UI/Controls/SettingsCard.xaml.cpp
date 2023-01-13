@@ -47,7 +47,7 @@ SettingsCard::SettingsCard() noexcept {
 	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_UI_Controls_SettingsCard_Uri });
 }
 
-void SettingsCard::OnApplyTemplate() {
+void SettingsCard::OnApplyTemplate() const {
 	__super::OnApplyTemplate();
 
 	OnOrientationChanged(Orientation());
@@ -128,21 +128,21 @@ void SettingsCard::OnPointerExited(PointerRoutedEventArgs const& args) const {
 	}
 }
 
-void SettingsCard::OnButtonIconChanged(bool isClickEnabled) {
+void SettingsCard::UpdateActionIcon(bool isClickEnabled) const {
 	FrameworkElement element { GetTemplateChild(controls::ActionIcon).try_as<FrameworkElement>() };
 	if (element) {
 		element.Visibility(isClickEnabled ? Visibility::Visible : Visibility::Collapsed);
 	}
 }
 
-void SettingsCard::OnDescriptionChanged(IInspectable const& newValue) {
+void SettingsCard::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
 		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
 	}
 }
 
-void SettingsCard::OnHeaderIconChanged(IconElement const& newValue) {
+void SettingsCard::OnHeaderIconChanged(IconElement const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::HeaderIcon).try_as<FrameworkElement>() };
 	if (element) {
 		element.Visibility(newValue != nullptr ? Visibility::Visible : Visibility::Collapsed);
@@ -156,18 +156,18 @@ void SettingsCard::OnHeaderChanged(IInspectable const& newValue) const {
 	}
 }
 
-void SettingsCard::OnIsClickEnabledChanged(bool newValue) {
+void SettingsCard::OnIsClickEnabledChanged(bool newValue) const {
 	if (newValue) {
 		IsTabStop(true);
-		OnButtonIconChanged(true);
+		UpdateActionIcon(true);
 	} else {
 		IsTabStop(false);
 		VisualStateManager::GoToState(*this, states::Normal, true); // Force-reset states.
-		OnButtonIconChanged(false);
+		UpdateActionIcon(false);
 	}
 }
 
-void SettingsCard::OnOrientationChanged(winrt::Orientation newValue) {
+void SettingsCard::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
 		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
 	} else {
@@ -180,8 +180,7 @@ void SettingsCard::OnDescriptionChangedStatic(DependencyObject const& sender, De
 }
 
 void SettingsCard::OnHeaderIconChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
-	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnHeaderIconChanged(
-		args.NewValue().as<Microsoft::UI::Xaml::Controls::IconElement>());
+	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnHeaderIconChanged(args.NewValue().as<IconElement>());
 }
 
 void SettingsCard::OnHeaderChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
@@ -189,11 +188,10 @@ void SettingsCard::OnHeaderChangedStatic(DependencyObject const& sender, Depende
 }
 
 void SettingsCard::OnIsClickEnabledChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
-	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnIsClickEnabledChanged(
-		winrt::unbox_value<bool>(args.NewValue()));
+	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnIsClickEnabledChanged(unbox_value<bool>(args.NewValue()));
 }
 
 void SettingsCard::OnOrientationChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
 	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnOrientationChanged(
-		winrt::unbox_value<winrt::Orientation>(args.NewValue()));
+		unbox_value<winrt::Orientation>(args.NewValue()));
 }
