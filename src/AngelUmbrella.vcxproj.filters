@@ -52,6 +52,9 @@
     <ClInclude Include="Converters\InvertedBooleanConverter.h">
       <Filter>Converters</Filter>
     </ClInclude>
+    <ClInclude Include="Converters\StringIsPresentToVisibilityConverter.h">
+      <Filter>Converters</Filter>
+    </ClInclude>
     <ClInclude Include="Helpers\ValueHelper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
@@ -66,6 +69,9 @@
       <Filter>Converters</Filter>
     </ClCompile>
     <ClCompile Include="Converters\InvertedBooleanConverter.cpp">
+      <Filter>Converters</Filter>
+    </ClCompile>
+    <ClCompile Include="Converters\StringIsPresentToVisibilityConverter.cpp">
       <Filter>Converters</Filter>
     </ClCompile>
   </ItemGroup>

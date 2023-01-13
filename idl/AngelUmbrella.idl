@@ -15,6 +15,12 @@ namespace Mntone.AngelUmbrella
 		    InvertedBooleanConverter();
 		}
 
+		[interface_name("IStringIsPresentToVisibilityConverter", A0144BE4-B8E9-4EFC-9CE0-DC48EB2416A7)]
+		runtimeclass StringIsPresentToVisibilityConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+		    StringIsPresentToVisibilityConverter();
+		}
+
 	}
 
 	namespace UI
