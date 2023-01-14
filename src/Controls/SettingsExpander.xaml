@@ -141,6 +141,7 @@
 										Width="{StaticResource SettingsCardActionButtonWidth}">
 							<AnimatedIcon x:Name="ExpandCollapseChevron"
 										  AnimatedIcon.State="NormalOff"
+										  AutomationProperties.AccessibilityView="Raw"
 										  Height="{StaticResource SettingsCardActionIconMaxSize}"
 										  HorizontalAlignment="Center"
 										  RenderTransformOrigin=".5,.5"

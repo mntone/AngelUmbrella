@@ -71,7 +71,7 @@ SettingsWindow::SettingsWindow() {
 	frame.Navigate(xaml_typename<winrt::SettingsWindow_RootPage>(), nullptr, SuppressNavigationTransitionInfo());
 }
 
-void SettingsWindow::OnPointerPressed(IInspectable const& sender, PointerRoutedEventArgs const& args) {
+void SettingsWindow::OnPointerPressed(IInspectable const& /*sender*/, PointerRoutedEventArgs const& args) {
 	// Instead of event CoreWindow.PointerPressed
 	PointerPointProperties properties { args.GetCurrentPoint(Content()).Properties() };
 	if (properties.IsXButton1Pressed()) {

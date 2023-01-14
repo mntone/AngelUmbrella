@@ -138,4 +138,21 @@ namespace Mntone.AngelUmbrella
 		}
 
 	}
+
+	namespace Automation.Peers
+	{
+		[interface_name("ISettingsCardAutomationPeer", D6653E09-9104-4C95-AA35-27970B7667EE)]
+	    [webhosthidden]
+		unsealed runtimeclass SettingsCardAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Microsoft.UI.Xaml.Automation.Provider.IInvokeProvider
+		{
+		    SettingsCardAutomationPeer(Mntone.AngelUmbrella.Controls.SettingsCard owner);
+		}
+
+		[interface_name("ISettingsExpanderAutomationPeer", FE96C311-9365-48C8-8687-A24B977EBF9C)]
+	    [webhosthidden]
+		unsealed runtimeclass SettingsExpanderAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.ExpanderAutomationPeer
+		{
+		    SettingsExpanderAutomationPeer(Mntone.AngelUmbrella.Controls.SettingsExpander owner);
+		}
+	}
 }

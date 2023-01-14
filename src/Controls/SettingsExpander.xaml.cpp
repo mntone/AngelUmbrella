@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "SettingsExpander.xaml.h"
 
+#include "SettingsExpanderAutomationPeer.h"
+
 namespace resources {
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsExpander { L"Mntone.AngelUmbrella.Controls.SettingsExpander" };
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsExpander_Uri { L"ms-appx:///Mntone.AngelUmbrella/Controls/SettingsExpander.xaml" };
@@ -55,6 +57,10 @@ void SettingsExpander::OnApplyTemplate() const {
 	VisualStateManager::GoToState(*this, IsEnabled() ? states::Normal : states::Disabled, false);
 	IsEnabledChanged(&SettingsExpander::OnIsEnabledChangedStatic); // The listener is the same lifecycle to the object.
 }
+
+//winrt::Automation::Peers::AutomationPeer SettingsExpander::OnCreateAutomationPeer() const {
+//	return make<Automation::Peers::implementation::SettingsExpanderAutomationPeer>(*this);
+//}
 
 void SettingsExpander::OnIsEnabledChangedStatic(IInspectable const& sender, DependencyPropertyChangedEventArgs const& args) {
 	VisualStateManager::GoToState(

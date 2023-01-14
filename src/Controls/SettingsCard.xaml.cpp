@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "SettingsCard.xaml.h"
 
+#include <winrt/Microsoft.UI.Xaml.Automation.Peers.h>
+
+#include "SettingsCardAutomationPeer.h"
+
 namespace resources {
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsCard { L"Mntone.AngelUmbrella.Controls.SettingsCard" };
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsCard_Uri { L"ms-appx:///Mntone.AngelUmbrella/Controls/SettingsCard.xaml" };
@@ -8,6 +12,7 @@ namespace resources {
 
 namespace controls {
 	constexpr std::wstring_view ActionIcon { L"ActionIcon" };
+	constexpr std::wstring_view Content { L"Content" };
 	constexpr std::wstring_view Description { L"Description" };
 	constexpr std::wstring_view HeaderIcon { L"HeaderIcon" };
 	constexpr std::wstring_view Header { L"Header" };
@@ -32,6 +37,8 @@ namespace winrt {
 
 	using namespace ::winrt::Microsoft::UI::Input;
 	using namespace ::winrt::Microsoft::UI::Xaml;
+	using namespace ::winrt::Microsoft::UI::Xaml::Automation;
+	using namespace ::winrt::Microsoft::UI::Xaml::Automation::Peers;
 	using namespace ::winrt::Microsoft::UI::Xaml::Controls;
 	using namespace ::winrt::Microsoft::UI::Xaml::Input;
 
@@ -41,23 +48,28 @@ namespace winrt {
 
 using namespace winrt::Mntone::AngelUmbrella::Controls::implementation;
 
-SettingsCard::SettingsCard() noexcept {
+SettingsCard::SettingsCard() noexcept: loaded_(false) {
 	props_.DelayInitIfNeeded();
 	DefaultStyleKey(box_value(resources::Mntone_AngelUmbrella_Controls_SettingsCard));
 	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_Controls_SettingsCard_Uri });
 }
 
-void SettingsCard::OnApplyTemplate() const {
+void SettingsCard::OnApplyTemplate() {
 	__super::OnApplyTemplate();
 
 	OnOrientationChanged(Orientation());
 	OnDescriptionChanged(Description());
-	OnHeaderChanged(Header());
+	OnHeaderChanged(IInspectable { nullptr }, Header());
 	OnHeaderIconChanged(HeaderIcon());
 	OnIsClickEnabledChanged(IsClickEnabled(), false);
 
 	VisualStateManager::GoToState(*this, IsEnabled() ? states::Normal : states::Disabled, false);
 	IsEnabledChanged(&SettingsCard::OnIsEnabledChangedStatic); // The listener is the same lifecycle to the object.
+	loaded_ = true;
+}
+
+winrt::Automation::Peers::AutomationPeer SettingsCard::OnCreateAutomationPeer() const {
+	return make<Automation::Peers::implementation::SettingsCardAutomationPeer>(*this);
 }
 
 void SettingsCard::OnIsEnabledChangedStatic(IInspectable const& sender, DependencyPropertyChangedEventArgs const& args) {
@@ -132,6 +144,29 @@ void SettingsCard::OnPointerExited(PointerRoutedEventArgs const& args) const {
 	}
 }
 
+void SettingsCard::ClearContentAutomation() const {
+	FrameworkElement element { GetTemplateChild(controls::Content).try_as<FrameworkElement>() };
+	if (element) {
+		ClearValue(AutomationProperties::NameProperty());
+		ClearValue(AutomationProperties::HelpTextProperty());
+	}
+}
+
+void SettingsCard::UpdateContentAutomation() const {
+	FrameworkElement element { GetTemplateChild(controls::Content).try_as<FrameworkElement>() };
+	if (element) {
+		std::optional<hstring> header { Header().try_as<hstring>() };
+		if (header && !header.value().empty()) {
+			AutomationProperties::SetName(*this, header.value());
+
+			std::optional<hstring> description { Description().try_as<hstring>() };
+			if (description.has_value() && !description.value().empty()) {
+				AutomationProperties::SetHelpText(*this, description.value());
+			}
+		}
+	}
+}
+
 void SettingsCard::UpdateActionIcon(bool isClickEnabled) const {
 	FrameworkElement element { GetTemplateChild(controls::ActionIcon).try_as<FrameworkElement>() };
 	if (element) {
@@ -142,7 +177,19 @@ void SettingsCard::UpdateActionIcon(bool isClickEnabled) const {
 void SettingsCard::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
-		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, false);
+		if (nullptr != newValue) {
+			VisualStateManager::GoToState(*this, states::HeaderAndDescription, false);
+
+			std::optional<hstring> description { newValue.try_as<hstring>() };
+			if (description && !description.value().empty()) {
+				//AutomationProperties::SetHelpText(*this, description.value());
+			} else {
+				//ClearValue(AutomationProperties::HelpTextProperty());
+			}
+		} else {
+			VisualStateManager::GoToState(*this, states::HeaderOnly, false);
+			//ClearValue(AutomationProperties::HelpTextProperty());
+		}
 	}
 }
 
@@ -153,19 +200,40 @@ void SettingsCard::OnHeaderIconChanged(IconElement const& newValue) const {
 	}
 }
 
-void SettingsCard::OnHeaderChanged(IInspectable const& newValue) const {
+void SettingsCard::OnHeaderChanged(IInspectable const& oldValue, IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Header).try_as<FrameworkElement>() };
 	if (element) {
-		element.Visibility(ValueHelper<IInspectable>::HasValue(newValue) ? Visibility::Visible : Visibility::Collapsed);
+		if (nullptr != newValue) {
+			element.Visibility(Visibility::Visible);
+
+			std::optional<hstring> header { newValue.try_as<hstring>() };
+			if (header && !header.value().empty()) {
+				//AutomationProperties::SetName(*this, header.value());
+			} else {
+				//ClearValue(AutomationProperties::NameProperty());
+			}
+		} else {
+			element.Visibility(Visibility::Collapsed);
+			//ClearValue(AutomationProperties::NameProperty());
+		}
 	}
+
+	//if (loaded_) {
+	//	if (auto peer = FrameworkElementAutomationPeer::FromElement(*this)) {
+	//		// Compare detail
+	//		peer.RaisePropertyChangedEvent(AutomationElementIdentifiers::NameProperty(), oldValue, newValue);
+	//	}
+	//}
 }
 
 void SettingsCard::OnIsClickEnabledChanged(bool newValue, bool useTransitions) const {
 	if (newValue) {
 		IsTabStop(true);
+		//UpdateContentAutomation();
 		UpdateActionIcon(true);
 	} else {
 		IsTabStop(false);
+		//ClearContentAutomation();
 		VisualStateManager::GoToState(*this, states::Normal, useTransitions); // Force-reset states.
 		UpdateActionIcon(false);
 	}
@@ -188,7 +256,7 @@ void SettingsCard::OnHeaderIconChangedStatic(DependencyObject const& sender, Dep
 }
 
 void SettingsCard::OnHeaderChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {
-	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnHeaderChanged(args.NewValue());
+	get_self<SettingsCard>(sender.as<winrt::SettingsCard>())->OnHeaderChanged(args.OldValue(), args.NewValue());
 }
 
 void SettingsCard::OnIsClickEnabledChangedStatic(DependencyObject const& sender, DependencyPropertyChangedEventArgs const& args) {

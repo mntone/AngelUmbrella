@@ -154,6 +154,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controls\SettingsCardAutomationPeer.h" />
+    <ClInclude Include="Controls\SettingsExpanderAutomationPeer.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
     <ClInclude Include="Composition\SystemBackdrops\DesktopAcrylicHelper.h" />
@@ -174,6 +176,8 @@
     <ClInclude Include="Helpers\XamlHelpers.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controls\SettingsCardAutomationPeer.cpp" />
+    <ClCompile Include="Controls\SettingsExpanderAutomationPeer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
