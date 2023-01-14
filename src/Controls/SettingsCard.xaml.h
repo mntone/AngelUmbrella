@@ -25,7 +25,7 @@ namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
 		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue) const;
 		inline void OnHeaderChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
-		inline void OnIsClickEnabledChanged(bool newValue) const;
+		inline void OnIsClickEnabledChanged(bool newValue, bool useTransitions = true) const;
 		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue) const;
 
 	private:

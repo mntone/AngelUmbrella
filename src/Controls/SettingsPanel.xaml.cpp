@@ -61,7 +61,7 @@ void SettingsPanel::OnButtonIconChanged(bool isClickEnabled) const {
 void SettingsPanel::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
-		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
+		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, false);
 	}
 }
 
@@ -81,9 +81,9 @@ void SettingsPanel::OnHeaderChanged(IInspectable const& newValue) const {
 
 void SettingsPanel::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
-		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
+		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, false);
 	} else {
-		VisualStateManager::GoToState(*this, states::Vertical, true);
+		VisualStateManager::GoToState(*this, states::Vertical, false);
 	}
 }
 

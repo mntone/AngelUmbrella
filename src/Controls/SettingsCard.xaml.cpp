@@ -54,13 +54,17 @@ void SettingsCard::OnApplyTemplate() const {
 	OnDescriptionChanged(Description());
 	OnHeaderChanged(Header());
 	OnHeaderIconChanged(HeaderIcon());
-	OnIsClickEnabledChanged(IsClickEnabled());
-	VisualStateManager::GoToState(*this, IsEnabled() ? states::Normal : states::Disabled, true);
+	OnIsClickEnabledChanged(IsClickEnabled(), false);
+
+	VisualStateManager::GoToState(*this, IsEnabled() ? states::Normal : states::Disabled, false);
 	IsEnabledChanged(&SettingsCard::OnIsEnabledChangedStatic); // The listener is the same lifecycle to the object.
 }
 
 void SettingsCard::OnIsEnabledChangedStatic(IInspectable const& sender, DependencyPropertyChangedEventArgs const& args) {
-	VisualStateManager::GoToState(sender.as<Control>(), unbox_value<bool>(args.NewValue()) ? states::Normal : states::Disabled, true);
+	VisualStateManager::GoToState(
+		sender.as<Control>(),
+		unbox_value<bool>(args.NewValue()) ? states::Normal : states::Disabled,
+		XamlHelpers::IsAnimationsEnabled());
 }
 
 void SettingsCard::OnKeyDown(KeyRoutedEventArgs const& args) const {
@@ -71,7 +75,7 @@ void SettingsCard::OnKeyDown(KeyRoutedEventArgs const& args) const {
 		case VirtualKey::Enter:
 		case VirtualKey::Space:
 		case VirtualKey::GamepadA:
-			VisualStateManager::GoToState(*this, states::Pressed, true);
+			VisualStateManager::GoToState(*this, states::Pressed, XamlHelpers::IsAnimationsEnabled());
 			break;
 		}
 	}
@@ -84,7 +88,7 @@ void SettingsCard::OnKeyUp(KeyRoutedEventArgs const& args) const {
 		case VirtualKey::Enter:
 		case VirtualKey::Space:
 		case VirtualKey::GamepadA:
-			VisualStateManager::GoToState(*this, states::Normal, true);
+			VisualStateManager::GoToState(*this, states::Normal, XamlHelpers::IsAnimationsEnabled());
 			break;
 		}
 	}
@@ -94,7 +98,7 @@ void SettingsCard::OnPointerEntered(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerEntered(args);
 
-		VisualStateManager::GoToState(*this, states::PointerOver, true);
+		VisualStateManager::GoToState(*this, states::PointerOver, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 
@@ -102,7 +106,7 @@ void SettingsCard::OnPointerPressed(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerPressed(args);
 
-		VisualStateManager::GoToState(*this, states::Pressed, true);
+		VisualStateManager::GoToState(*this, states::Pressed, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 
@@ -113,9 +117,9 @@ void SettingsCard::OnPointerReleased(PointerRoutedEventArgs const& args) const {
 		winrt::SettingsCard proj { *this };
 		winrt::Windows::Foundation::Numerics::float2 point { args.GetCurrentPoint(proj).Position() };
 		if (point.x < 0 || point.y < 0 || point.x > ActualWidth() || point.y > ActualHeight()) {
-			VisualStateManager::GoToState(proj, states::Normal, true);
+			VisualStateManager::GoToState(proj, states::Normal, XamlHelpers::IsAnimationsEnabled());
 		} else {
-			VisualStateManager::GoToState(proj, states::PointerOver, true);
+			VisualStateManager::GoToState(proj, states::PointerOver, XamlHelpers::IsAnimationsEnabled());
 		}
 	}
 }
@@ -124,7 +128,7 @@ void SettingsCard::OnPointerExited(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerExited(args);
 
-		VisualStateManager::GoToState(*this, states::Normal, true);
+		VisualStateManager::GoToState(*this, states::Normal, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 
@@ -138,7 +142,7 @@ void SettingsCard::UpdateActionIcon(bool isClickEnabled) const {
 void SettingsCard::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
-		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
+		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, false);
 	}
 }
 
@@ -156,22 +160,22 @@ void SettingsCard::OnHeaderChanged(IInspectable const& newValue) const {
 	}
 }
 
-void SettingsCard::OnIsClickEnabledChanged(bool newValue) const {
+void SettingsCard::OnIsClickEnabledChanged(bool newValue, bool useTransitions) const {
 	if (newValue) {
 		IsTabStop(true);
 		UpdateActionIcon(true);
 	} else {
 		IsTabStop(false);
-		VisualStateManager::GoToState(*this, states::Normal, true); // Force-reset states.
+		VisualStateManager::GoToState(*this, states::Normal, useTransitions); // Force-reset states.
 		UpdateActionIcon(false);
 	}
 }
 
 void SettingsCard::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
-		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
+		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, false);
 	} else {
-		VisualStateManager::GoToState(*this, states::Vertical, true);
+		VisualStateManager::GoToState(*this, states::Vertical, false);
 	}
 }
 

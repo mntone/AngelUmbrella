@@ -51,29 +51,34 @@ void SettingsExpander::OnApplyTemplate() const {
 	OnOrientationChanged(Orientation());
 	OnDescriptionChanged(Description());
 	OnHeaderIconChanged(HeaderIcon());
+
+	VisualStateManager::GoToState(*this, IsEnabled() ? states::Normal : states::Disabled, false);
 	IsEnabledChanged(&SettingsExpander::OnIsEnabledChangedStatic); // The listener is the same lifecycle to the object.
 }
 
 void SettingsExpander::OnIsEnabledChangedStatic(IInspectable const& sender, DependencyPropertyChangedEventArgs const& args) {
-	VisualStateManager::GoToState(sender.as<Control>(), unbox_value<bool>(args.NewValue()) ? states::Normal : states::Disabled, true);
+	VisualStateManager::GoToState(
+		sender.as<Control>(),
+		unbox_value<bool>(args.NewValue()) ? states::Normal : states::Disabled,
+		XamlHelpers::IsAnimationsEnabled());
 }
 
 void SettingsExpander::OnPointerEntered(PointerRoutedEventArgs const& args) const {
 	__super::OnPointerEntered(args);
 
-	VisualStateManager::GoToState(*this, states::PointerOver, true);
+	VisualStateManager::GoToState(*this, states::PointerOver, XamlHelpers::IsAnimationsEnabled());
 }
 
 void SettingsExpander::OnPointerExited(PointerRoutedEventArgs const& args) const {
 	__super::OnPointerExited(args);
 
-	VisualStateManager::GoToState(*this, states::Normal, true);
+	VisualStateManager::GoToState(*this, states::Normal, XamlHelpers::IsAnimationsEnabled());
 }
 
 void SettingsExpander::OnDescriptionChanged(IInspectable const& newValue) const {
 	FrameworkElement element { GetTemplateChild(controls::Description).try_as<FrameworkElement>() };
 	if (element) {
-		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, true);
+		VisualStateManager::GoToState(*this, ValueHelper<IInspectable>::HasValue(newValue) ? states::HeaderAndDescription : states::HeaderOnly, false);
 	}
 }
 
@@ -86,9 +91,9 @@ void SettingsExpander::OnHeaderIconChanged(IconElement const& newValue) const {
 
 void SettingsExpander::OnOrientationChanged(winrt::Orientation newValue) const {
 	if (ValueHelper<IInspectable>::HasValue(Header())) {
-		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, true);
+		VisualStateManager::GoToState(*this, newValue == Orientation::Vertical ? states::Vertical : states::Horizontal, false);
 	} else {
-		VisualStateManager::GoToState(*this, states::Vertical, true);
+		VisualStateManager::GoToState(*this, states::Vertical, false);
 	}
 }
 

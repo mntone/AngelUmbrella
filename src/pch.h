@@ -16,6 +16,7 @@
 #include <winrt/Microsoft.UI.Xaml.Markup.h>
 
 #include "Helpers/ValueHelper.h"
+#include "Helpers/XamlHelpers.h"
 #include "Controls/SettingsCard.xaml.h"
 #include "Controls/SettingsExpander.xaml.h"
 #include "Controls/SettingsPanel.xaml.h"
