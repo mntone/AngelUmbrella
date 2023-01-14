@@ -4,6 +4,12 @@
     <Filter Include="Generated Files">
       <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Composition">
+      <UniqueIdentifier>{12d04b74-4cc5-4748-b2b6-bb06197d3251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Composition\SystemBackdrops">
+      <UniqueIdentifier>{8f11473a-6b74-4842-947b-75465ff413db}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Controls">
       <UniqueIdentifier>{5e26f4a9-4ad9-4d62-b29e-2db72a4e6798}</UniqueIdentifier>
     </Filter>
@@ -40,6 +46,9 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
+    <ClInclude Include="Composition\SystemBackdrops\DesktopAcrylicHelper.h">
+      <Filter>Composition\SystemBackdrops</Filter>
+    </ClInclude>
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h">
       <Filter>Converters</Filter>
     </ClInclude>
@@ -59,6 +68,9 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Composition\SystemBackdrops\DesktopAcrylicHelper.cpp">
+      <Filter>Composition\SystemBackdrops</Filter>
+    </ClCompile>
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp">
       <Filter>Converters</Filter>
     </ClCompile>

@@ -147,6 +147,10 @@
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="DesktopAcrylicWindow.xaml.h">
+      <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="SettingsWindow.xaml.h">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </ClInclude>
@@ -161,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
+    <Page Include="DesktopAcrylicWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SettingsWindow.xaml" />
     <Page Include="SettingsWindow_DetailPage.xaml">
       <SubType>Designer</SubType>
@@ -175,6 +182,10 @@
     </ClCompile>
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="DesktopAcrylicWindow.xaml.cpp">
+      <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </ClCompile>
     <ClCompile Include="SettingsWindow.xaml.cpp">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -193,6 +204,10 @@
     <Midl Include="App.idl">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="DesktopAcrylicWindow.idl">
+      <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Midl>
     <Midl Include="SettingsWindow.idl">
       <SubType>Code</SubType>

@@ -1,0 +1,41 @@
+<Window x:Class="Mntone.AngelUmbrella.Samples.DesktopAcrylicWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ctrl="using:Mntone.AngelUmbrella.Controls"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d">
+
+	<Border>
+		<StackPanel HorizontalAlignment="Center"
+					MaxWidth="480"
+					Spacing="2"
+					VerticalAlignment="Center">
+			<TextBlock Text="DesktopAcrylicHelper helps you to set window color. You choose &quot;Theme&quot; and &quot;Kind.&quot;"
+					   Style="{StaticResource SettingsSubHeaderBlockStyle}" />
+
+			<ctrl:SettingsCard Header="Theme">
+				<ComboBox MinWidth="130"
+						  SelectedIndex="{x:Bind Theme, Mode=TwoWay}">
+					<ComboBoxItem>System</ComboBoxItem>
+					<ComboBoxItem>Light</ComboBoxItem>
+					<ComboBoxItem>Dark</ComboBoxItem>
+					<ComboBoxItem>Accent Light</ComboBoxItem>
+					<ComboBoxItem>Accent Dark</ComboBoxItem>
+				</ComboBox>
+			</ctrl:SettingsCard>
+
+			<ctrl:SettingsCard Header="Kind">
+				<ComboBox MinWidth="130"
+						  SelectedIndex="{x:Bind Kind, Mode=TwoWay}">
+					<ComboBoxItem>Default</ComboBoxItem>
+					<ComboBoxItem>Base</ComboBoxItem>
+				</ComboBox>
+			</ctrl:SettingsCard>
+
+			<ctrl:SettingsCard Header="Sync active state">
+				<ToggleSwitch IsOn="{x:Bind SyncActiveState, Mode=TwoWay}" />
+			</ctrl:SettingsCard>
+		</StackPanel>
+	</Border>
+</Window>

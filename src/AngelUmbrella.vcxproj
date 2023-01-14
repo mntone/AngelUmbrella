@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
+    <ClInclude Include="Composition\SystemBackdrops\DesktopAcrylicHelper.h" />
     <ClInclude Include="Controls\SettingsCard.xaml.h">
       <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
     </ClInclude>
@@ -176,6 +177,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Composition\SystemBackdrops\DesktopAcrylicHelper.cpp" />
     <ClCompile Include="Controls\SettingsCard.xaml.cpp">
       <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
     </ClCompile>

@@ -1,0 +1,10 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+	[interface_name("IDesktopAcrylicWindow", D883A84F-32E0-4480-8674-848A418127F5)]
+    runtimeclass DesktopAcrylicWindow : Microsoft.UI.Xaml.Window
+    {
+		Int32 Theme;
+		Int32 Kind;
+		Boolean SyncActiveState;
+    }
+}

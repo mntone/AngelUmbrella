@@ -6,6 +6,8 @@ https://user-images.githubusercontent.com/901816/211709015-77fee141-17b7-45e6-a9
 
 ## Classes
 
+- *Mntone.AngelUmbrella.Composition.SystemBackdrops*
+  - **DesktopAcrylicHelper** - Provide to set acrylic colors (Choose assets from `Theme` and `Kind`).
 - *Mntone.AngelUmbrella.Converters*
   - **BooleanToVisibilityConverter** - Convert from *bool* to *Microsoft.UI.Xaml.Visibility* (TwoWay).
   - **InvertedBooleanConverterTest** - Convert from *bool* to inverted *bool* (TwoWay).

@@ -4,6 +4,7 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="DesktopAcrylicWindow.xaml" />
     <Page Include="SettingsWindow.xaml" />
     <Page Include="SettingsWindow_RootPage.xaml" />
     <Page Include="SettingsWindow_DetailPage.xaml" />

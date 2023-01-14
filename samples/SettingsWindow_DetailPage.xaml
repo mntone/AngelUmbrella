@@ -33,6 +33,9 @@
 					Spacing="24">
 			<angel:SettingsCard Header="Mock UI"
 								Description="This is sample UI. The function doesn't work!!" />
+			<angel:SettingsCard Click="OnDesktopAcrylicWindowOpening"
+								Header="DesktopAcrylicHelper sample window"
+								IsClickEnabled="True" />
 
 			<StackPanel Spacing="2">
 				<TextBlock Text="Scale &amp; layout"

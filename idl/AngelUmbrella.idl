@@ -1,5 +1,53 @@
 namespace Mntone.AngelUmbrella
 {
+	namespace Composition.SystemBackdrops
+	{
+
+		enum DesktopAcrylicKind
+		{
+		    Default,
+			Base,
+		};
+
+		enum DesktopAcrylicTheme
+		{
+		    Default,
+			Light,
+			Dark,
+			AccentLight,
+			AccentDark,
+		};
+
+		[static_name("IDesktopAcrylicHelperStatics", 1E604D41-B809-4F4D-8FF3-5E4BD2562A3D)]
+		static runtimeclass DesktopAcrylicHelper
+		{
+			[default_overload]
+			[method_name("SetColors")]
+		    static void SetColors(
+				Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController controller,
+				DesktopAcrylicTheme theme);
+
+			[method_name("SetColorsWithSystemBackdropTheme")]
+		    static void SetColors(
+				Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController controller,
+				Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme theme);
+
+			[default_overload]
+			[method_name("SetColorsWithKind")]
+		    static void SetColors(
+				Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController controller,
+				DesktopAcrylicTheme theme,
+				DesktopAcrylicKind kind);
+
+			[method_name("SetColorsWithSystemBackdropThemeAndKind")]
+		    static void SetColors(
+				Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController controller,
+				Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme theme,
+				DesktopAcrylicKind kind);
+		};
+
+	}
+
 	namespace Converters
 	{
 
