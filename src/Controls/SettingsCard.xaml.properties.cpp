@@ -1,17 +1,17 @@
 #include "pch.h"
 #include "SettingsCard.xaml.h"
-#if __has_include("./UI/Controls/SettingsCard.g.cpp")
-#include "./UI/Controls/SettingsCard.g.cpp"
+#if __has_include("./Controls/SettingsCard.g.cpp")
+#include "./Controls/SettingsCard.g.cpp"
 #endif
 
 #define DELAY_INIT_DP // Delay Init
-#include "UI/Helpers/DependencyPropertyHelper.h"
+#include "Helpers/DependencyPropertyHelper.h"
 
 namespace projection { // Need to build
-	using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls;
+	using namespace ::winrt::Mntone::AngelUmbrella::Controls;
 }
 
-using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls::implementation;
+using namespace ::winrt::Mntone::AngelUmbrella::Controls::implementation;
 
 SettingsCard::DependencyProperties SettingsCard::props_;
 

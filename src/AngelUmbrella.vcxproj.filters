@@ -4,20 +4,14 @@
     <Filter Include="Generated Files">
       <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controls">
+      <UniqueIdentifier>{5e26f4a9-4ad9-4d62-b29e-2db72a4e6798}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Converters">
       <UniqueIdentifier>{9239182e-ec60-4177-a6a5-8abb6e11d02e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Helpers">
       <UniqueIdentifier>{e4cfde82-f621-42f3-aa13-dad288a8f072}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UI">
-      <UniqueIdentifier>{12d04b74-4cc5-4748-b2b6-bb06197d3251}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UI\Controls">
-      <UniqueIdentifier>{5e26f4a9-4ad9-4d62-b29e-2db72a4e6798}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UI\Helpers">
-      <UniqueIdentifier>{8f11473a-6b74-4842-947b-75465ff413db}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,14 +26,14 @@
     <Midl Include="..\idl\AngelUmbrella.idl" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UI\Controls\SettingsCard.xaml">
-      <Filter>UI\Controls</Filter>
+    <Page Include="Controls\SettingsCard.xaml">
+      <Filter>Controls</Filter>
     </Page>
-    <Page Include="UI\Controls\SettingsExpander.xaml">
-      <Filter>UI\Controls</Filter>
+    <Page Include="Controls\SettingsExpander.xaml">
+      <Filter>Controls</Filter>
     </Page>
-    <Page Include="UI\Controls\SettingsPanel.xaml">
-      <Filter>UI\Controls</Filter>
+    <Page Include="Controls\SettingsPanel.xaml">
+      <Filter>Controls</Filter>
     </Page>
     <Page Include="Themes\Generic.xaml" />
   </ItemGroup>
@@ -55,11 +49,11 @@
     <ClInclude Include="Converters\StringIsPresentToVisibilityConverter.h">
       <Filter>Converters</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers\ValueHelper.h">
+    <ClInclude Include="Helpers\DependencyPropertyHelper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="UI\Helpers\DependencyPropertyHelper.h">
-      <Filter>UI\Helpers</Filter>
+    <ClInclude Include="Helpers\ValueHelper.h">
+      <Filter>Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

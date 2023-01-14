@@ -1,17 +1,17 @@
 #include "pch.h"
 #include "SettingsPanel.xaml.h"
-#if __has_include("./UI/Controls/SettingsPanel.g.cpp")
-#include "./UI/Controls/SettingsPanel.g.cpp"
+#if __has_include("./Controls/SettingsPanel.g.cpp")
+#include "./Controls/SettingsPanel.g.cpp"
 #endif
 
 #define DELAY_INIT_DP // Delay Init
-#include "UI/Helpers/DependencyPropertyHelper.h"
+#include "Helpers/DependencyPropertyHelper.h"
 
 namespace projection { // Need to build
-	using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls;
+	using namespace ::winrt::Mntone::AngelUmbrella::Controls;
 }
 
-using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls::implementation;
+using namespace ::winrt::Mntone::AngelUmbrella::Controls::implementation;
 
 SettingsPanel::DependencyProperties SettingsPanel::props_;
 
@@ -19,18 +19,6 @@ void SettingsPanel::DependencyProperties::DelayInitIfNeeded() {
 	if (initialized_) return;
 
 	DEFINE_PARENT_TYPENAME(SettingsPanel);
-
-	DEFINE_DP_METADATA(
-		ActionIcon,
-		winrt::Microsoft::UI::Xaml::Controls::IconElement,
-		SettingsPanel,
-		winrt::PropertyMetadata(winrt::box_value(winrt::hstring(L"\ue974"))));
-
-	DEFINE_DP_METADATA(
-		ActionIconTooltip,
-		winrt::hstring,
-		SettingsPanel,
-		winrt::PropertyMetadata(winrt::box_value(winrt::hstring(L"More"))));
 
 	DEFINE_DP_CALLBACK(
 		Description,

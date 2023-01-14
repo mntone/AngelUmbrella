@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
-using Mntone.AngelUmbrella.UI.Controls;
+using Mntone.AngelUmbrella.Controls;
 
 namespace Mntone.AngelUmbrella.Tests.Controls
 {

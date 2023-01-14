@@ -1,17 +1,17 @@
 #include "pch.h"
 #include "SettingsExpander.xaml.h"
-#if __has_include("./UI/Controls/SettingsExpander.g.cpp")
-#include "./UI/Controls/SettingsExpander.g.cpp"
+#if __has_include("./Controls/SettingsExpander.g.cpp")
+#include "./Controls/SettingsExpander.g.cpp"
 #endif
 
 #define DELAY_INIT_DP // Delay Init
-#include "UI/Helpers/DependencyPropertyHelper.h"
+#include "Helpers/DependencyPropertyHelper.h"
 
 namespace projection { // Need to build
-	using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls;
+	using namespace ::winrt::Mntone::AngelUmbrella::Controls;
 }
 
-using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls::implementation;
+using namespace ::winrt::Mntone::AngelUmbrella::Controls::implementation;
 
 SettingsExpander::DependencyProperties SettingsExpander::props_;
 

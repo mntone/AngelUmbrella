@@ -139,64 +139,64 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml" />
-    <Page Include="UI\Controls\SettingsCard.xaml">
+    <Page Include="Controls\SettingsCard.xaml">
       <Type>DefaultStyle</Type>
     </Page>
-    <Page Include="UI\Controls\SettingsCard_themeresources.xaml">
-      <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
+    <Page Include="Controls\SettingsCard_themeresources.xaml">
+      <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
       <Type>ThemeResources</Type>
     </Page>
-    <Page Include="UI\Controls\SettingsExpander.xaml">
+    <Page Include="Controls\SettingsExpander.xaml">
       <Type>DefaultStyle</Type>
     </Page>
-    <Page Include="UI\Controls\SettingsPanel.xaml">
+    <Page Include="Controls\SettingsPanel.xaml">
       <Type>DefaultStyle</Type>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="version.h" />
+    <ClInclude Include="Controls\SettingsCard.xaml.h">
+      <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Controls\SettingsExpander.xaml.h">
+      <DependentUpon>Controls\SettingsExpander.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Controls\SettingsPanel.xaml.h">
+      <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h" />
     <ClInclude Include="Converters\InvertedBooleanConverter.h" />
     <ClInclude Include="Converters\StringIsPresentToVisibilityConverter.h" />
+    <ClInclude Include="Helpers\DependencyPropertyHelper.h" />
     <ClInclude Include="Helpers\ValueHelper.h" />
-    <ClInclude Include="UI\Controls\SettingsCard.xaml.h">
-      <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="UI\Controls\SettingsExpander.xaml.h">
-      <DependentUpon>UI\Controls\SettingsExpander.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="UI\Controls\SettingsPanel.xaml.h">
-      <DependentUpon>UI\Controls\SettingsPanel.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="UI\Helpers\DependencyPropertyHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Controls\SettingsCard.xaml.cpp">
+      <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsCard.xaml.properties.cpp">
+      <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsExpander.xaml.cpp">
+      <DependentUpon>Controls\SettingsExpander.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsExpander.xaml.properties.cpp">
+      <DependentUpon>Controls\SettingsExpander.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsPanel.xaml.cpp">
+      <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsPanel.xaml.properties.cpp">
+      <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp" />
     <ClCompile Include="Converters\InvertedBooleanConverter.cpp" />
     <ClCompile Include="Converters\StringIsPresentToVisibilityConverter.cpp" />
-    <ClCompile Include="UI\Controls\SettingsCard.xaml.cpp">
-      <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="UI\Controls\SettingsCard.xaml.properties.cpp">
-      <DependentUpon>UI\Controls\SettingsCard.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="UI\Controls\SettingsExpander.xaml.cpp">
-      <DependentUpon>UI\Controls\SettingsExpander.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="UI\Controls\SettingsExpander.xaml.properties.cpp">
-      <DependentUpon>UI\Controls\SettingsExpander.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="UI\Controls\SettingsPanel.xaml.cpp">
-      <DependentUpon>UI\Controls\SettingsPanel.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="UI\Controls\SettingsPanel.xaml.properties.cpp">
-      <DependentUpon>UI\Controls\SettingsPanel.xaml</DependentUpon>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

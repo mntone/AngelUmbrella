@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/901816/211709015-77fee141-17b7-45e6-a9
   - **BooleanToVisibilityConverter** - Convert from *bool* to *Microsoft.UI.Xaml.Visibility* (TwoWay).
   - **InvertedBooleanConverterTest** - Convert from *bool* to inverted *bool* (TwoWay).
   - **StringIsPresentToVisibilityConverter** - Convert from *hstring* to *Microsoft.UI.Xaml.Visibility* (OneWay only).
-- *Mntone.AngelUmbrella.UI.Controls* (Rename to *Mntone.AngelUmbrella.Controls* in Version 1.1)
+- *Mntone.AngelUmbrella.Controls* (*Mntone.AngelUmbrella.UI.Controls* in <u>Version 1.0.x</u>)
   - **SettingsCard** - Provide basic settings card.
   - **SettingsExpander** - Provide settings card with expander.
   - **SettingsPanel** - Provide settings layout in items control, such as `ListView` or `GridView`, with the style `CardListViewItemStyle`.
@@ -63,7 +63,7 @@ Angel Umbrella have the following system requirements:
    #include <winrt/Microsoft.UI.Xaml.Controls.h>
    // Other header files in namespace Microsoft
 
-   #include <winrt/Mntone.AngelUmbrella.UI.Controls.h> // <- HERE!
+   #include <winrt/Mntone.AngelUmbrella.Controls.h> // <- HERE!
    ```
 
 ## Development

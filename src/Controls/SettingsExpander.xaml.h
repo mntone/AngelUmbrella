@@ -1,7 +1,7 @@
 #pragma once
-#include "./UI/Controls/SettingsExpander.g.h"
+#include "./Controls/SettingsExpander.g.h"
 
-namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation {
+namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 
 	struct SettingsExpander: SettingsExpander_base<SettingsExpander> {
 		SettingsExpander() noexcept;
@@ -57,7 +57,7 @@ namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation {
 
 }
 
-namespace winrt::Mntone::AngelUmbrella::UI::Controls::factory_implementation {
+namespace winrt::Mntone::AngelUmbrella::Controls::factory_implementation {
 
 	struct SettingsExpander: SettingsExpanderT<SettingsExpander, implementation::SettingsExpander> {
 	};

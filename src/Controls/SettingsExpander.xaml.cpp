@@ -2,8 +2,8 @@
 #include "SettingsExpander.xaml.h"
 
 namespace resources {
-	constexpr std::wstring_view Mntone_AngelUmbrella_UI_Controls_SettingsExpander { L"Mntone.AngelUmbrella.UI.Controls.SettingsExpander" };
-	constexpr std::wstring_view Mntone_AngelUmbrella_UI_Controls_SettingsExpander_Uri { L"ms-appx:///Mntone.AngelUmbrella/UI/Controls/SettingsExpander.xaml" };
+	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsExpander { L"Mntone.AngelUmbrella.Controls.SettingsExpander" };
+	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsExpander_Uri { L"ms-appx:///Mntone.AngelUmbrella/Controls/SettingsExpander.xaml" };
 }
 
 namespace controls {
@@ -34,15 +34,15 @@ namespace winrt {
 	using namespace ::winrt::Microsoft::UI::Xaml::Input;
 
 	using namespace ::winrt::Mntone::AngelUmbrella::Helpers;
-	using namespace ::winrt::Mntone::AngelUmbrella::UI::Controls;
+	using namespace ::winrt::Mntone::AngelUmbrella::Controls;
 }
 
-using namespace winrt::Mntone::AngelUmbrella::UI::Controls::implementation;
+using namespace winrt::Mntone::AngelUmbrella::Controls::implementation;
 
 SettingsExpander::SettingsExpander() noexcept {
 	props_.DelayInitIfNeeded();
-	DefaultStyleKey(box_value(resources::Mntone_AngelUmbrella_UI_Controls_SettingsExpander));
-	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_UI_Controls_SettingsExpander_Uri });
+	DefaultStyleKey(box_value(resources::Mntone_AngelUmbrella_Controls_SettingsExpander));
+	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_Controls_SettingsExpander_Uri });
 }
 
 void SettingsExpander::OnApplyTemplate() const {
