@@ -8,7 +8,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <LangVersion>10</LangVersion>
+    <CsWinRTPrivateProjection>true</CsWinRTPrivateProjection>
     <CsWinRTIncludes>Mntone.AngelUmbrella</CsWinRTIncludes>
+    <CsWinRTExcludes>Mntone.AngelUmbrella.Composition.SystemBackdrops</CsWinRTExcludes>
+    <CsWinRTPrivateFilters>
+      -include Mntone.AngelUmbrella.Composition.SystemBackdrops.IDesktopAcrylicHelperStatics
+      -include Mntone.AngelUmbrella.Composition.SystemBackdrops.DesktopAcrylicHelper
+    </CsWinRTPrivateFilters>
     <CsWinRTIIDOptimizerOptOut>true</CsWinRTIIDOptimizerOptOut>
   </PropertyGroup>
 
