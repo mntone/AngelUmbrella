@@ -16,14 +16,14 @@ using namespace winrt::Mntone::AngelUmbrella::Converters::implementation;
 InvertedBooleanConverter::InvertedBooleanConverter() noexcept {
 }
 
-winrt::IInspectable InvertedBooleanConverter::Convert(IInspectable const& value, TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
+winrt::IInspectable InvertedBooleanConverter::Convert(IInspectable const& value, [[maybe_unused]] TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
 	WINRT_ASSERT(xaml_typename<bool>() == targetType);
 
 	std::optional<bool> boolean { value.try_as<bool>() };
 	return boolean.has_value() ? box_value(!boolean.value()) : DependencyProperty::UnsetValue();
 }
 
-winrt::IInspectable InvertedBooleanConverter::ConvertBack(IInspectable const& value, TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
+winrt::IInspectable InvertedBooleanConverter::ConvertBack(IInspectable const& value, [[maybe_unused]] TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
 	WINRT_ASSERT(xaml_typename<bool>() == targetType);
 
 	std::optional<bool> boolean { value.try_as<bool>() };

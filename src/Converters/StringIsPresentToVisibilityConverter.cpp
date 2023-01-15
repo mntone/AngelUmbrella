@@ -16,7 +16,7 @@ using namespace winrt::Mntone::AngelUmbrella::Converters::implementation;
 StringIsPresentToVisibilityConverter::StringIsPresentToVisibilityConverter() noexcept {
 }
 
-winrt::IInspectable StringIsPresentToVisibilityConverter::Convert(IInspectable const& value, TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
+winrt::IInspectable StringIsPresentToVisibilityConverter::Convert(IInspectable const& value, [[maybe_unused]] TypeName const& targetType, IInspectable const& /*parameter*/, hstring const& /*language*/) const {
 	WINRT_ASSERT(xaml_typename<Visibility>() == targetType);
 
 	std::optional<hstring> string { value.try_as<hstring>() };
