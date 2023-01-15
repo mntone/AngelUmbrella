@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "SettingsCard.xaml.h"
 
+#include <winrt/Microsoft.UI.Xaml.Automation.Peers.h>
+
+#include "SettingsCardAutomationPeer.h"
+
 namespace resources {
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsCard { L"Mntone.AngelUmbrella.Controls.SettingsCard" };
 	constexpr std::wstring_view Mntone_AngelUmbrella_Controls_SettingsCard_Uri { L"ms-appx:///Mntone.AngelUmbrella/Controls/SettingsCard.xaml" };
@@ -32,6 +36,8 @@ namespace winrt {
 
 	using namespace ::winrt::Microsoft::UI::Input;
 	using namespace ::winrt::Microsoft::UI::Xaml;
+	using namespace ::winrt::Microsoft::UI::Xaml::Automation;
+	using namespace ::winrt::Microsoft::UI::Xaml::Automation::Peers;
 	using namespace ::winrt::Microsoft::UI::Xaml::Controls;
 	using namespace ::winrt::Microsoft::UI::Xaml::Input;
 
@@ -60,6 +66,10 @@ void SettingsCard::OnApplyTemplate() const {
 	IsEnabledChanged(&SettingsCard::OnIsEnabledChangedStatic); // The listener is the same lifecycle to the object.
 }
 
+winrt::Automation::Peers::AutomationPeer SettingsCard::OnCreateAutomationPeer() const {
+	return make<Automation::Peers::implementation::SettingsCardAutomationPeer>(*this);
+}
+
 void SettingsCard::OnIsEnabledChangedStatic(IInspectable const& sender, DependencyPropertyChangedEventArgs const& args) {
 	VisualStateManager::GoToState(
 		sender.as<Control>(),
@@ -70,65 +80,36 @@ void SettingsCard::OnIsEnabledChangedStatic(IInspectable const& sender, Dependen
 void SettingsCard::OnKeyDown(KeyRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnKeyDown(args);
-
-		switch (args.Key()) {
-		case VirtualKey::Enter:
-		case VirtualKey::Space:
-		case VirtualKey::GamepadA:
-			VisualStateManager::GoToState(*this, states::Pressed, XamlHelpers::IsAnimationsEnabled());
-			break;
-		}
 	}
 }
 
 void SettingsCard::OnKeyUp(KeyRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnKeyUp(args);
-		switch (args.Key()) {
-		case VirtualKey::Enter:
-		case VirtualKey::Space:
-		case VirtualKey::GamepadA:
-			VisualStateManager::GoToState(*this, states::Normal, XamlHelpers::IsAnimationsEnabled());
-			break;
-		}
 	}
 }
 
 void SettingsCard::OnPointerEntered(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerEntered(args);
-
-		VisualStateManager::GoToState(*this, states::PointerOver, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 
 void SettingsCard::OnPointerPressed(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerPressed(args);
-
-		VisualStateManager::GoToState(*this, states::Pressed, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 
 void SettingsCard::OnPointerReleased(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerReleased(args);
-
-		winrt::SettingsCard proj { *this };
-		winrt::Windows::Foundation::Numerics::float2 point { args.GetCurrentPoint(proj).Position() };
-		if (point.x < 0 || point.y < 0 || point.x > ActualWidth() || point.y > ActualHeight()) {
-			VisualStateManager::GoToState(proj, states::Normal, XamlHelpers::IsAnimationsEnabled());
-		} else {
-			VisualStateManager::GoToState(proj, states::PointerOver, XamlHelpers::IsAnimationsEnabled());
-		}
 	}
 }
 
 void SettingsCard::OnPointerExited(PointerRoutedEventArgs const& args) const {
 	if (IsClickEnabled()) {
 		__super::OnPointerExited(args);
-
-		VisualStateManager::GoToState(*this, states::Normal, XamlHelpers::IsAnimationsEnabled());
 	}
 }
 

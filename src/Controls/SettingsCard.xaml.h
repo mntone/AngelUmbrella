@@ -7,7 +7,9 @@ namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 		SettingsCard() noexcept;
 
 		void OnApplyTemplate() const;
+		Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const;
 
+		// internal:
 		void OnPointerEntered(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
 		void OnPointerPressed(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
 		void OnPointerReleased(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;

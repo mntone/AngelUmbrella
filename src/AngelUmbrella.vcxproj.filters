@@ -49,6 +49,9 @@
     <ClInclude Include="Composition\SystemBackdrops\DesktopAcrylicHelper.h">
       <Filter>Composition\SystemBackdrops</Filter>
     </ClInclude>
+    <ClInclude Include="Controls\SettingsCardAutomationPeer.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h">
       <Filter>Converters</Filter>
     </ClInclude>
@@ -73,6 +76,9 @@
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="Composition\SystemBackdrops\DesktopAcrylicHelper.cpp">
       <Filter>Composition\SystemBackdrops</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\SettingsCardAutomationPeer.cpp">
+      <Filter>Controls</Filter>
     </ClCompile>
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp">
       <Filter>Converters</Filter>

@@ -141,6 +141,7 @@
 										Width="{StaticResource SettingsCardActionButtonWidth}">
 							<AnimatedIcon x:Name="ExpandCollapseChevron"
 										  AnimatedIcon.State="NormalOff"
+										  AutomationProperties.AccessibilityView="Raw"
 										  Height="{StaticResource SettingsCardActionIconMaxSize}"
 										  HorizontalAlignment="Center"
 										  RenderTransformOrigin=".5,.5"
@@ -333,6 +334,7 @@
 						</Grid.RowDefinitions>
 
 						<ToggleButton x:Name="ExpanderHeader"
+									  AutomationProperties.AutomationId="ExpanderToggleButton"
 									  Background="{TemplateBinding Background}"
 									  BackgroundSizing="{TemplateBinding BackgroundSizing}"
 									  BorderBrush="{TemplateBinding BorderBrush}"

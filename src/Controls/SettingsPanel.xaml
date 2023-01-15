@@ -75,7 +75,6 @@
 						</Grid.RowDefinitions>
 
 						<Viewbox x:Name="HeaderIcon"
-								 AutomationProperties.Name="{TemplateBinding Header}"
 								 Height="{StaticResource SettingsCardHeaderIconMaxSize}"
 								 Margin="{StaticResource SettingsCardHeaderIconMargin}"
 								 StretchDirection="DownOnly"
@@ -89,9 +88,11 @@
 						<StackPanel Grid.Column="1"
 									VerticalAlignment="Center">
 							<ContentPresenter x:Name="Header"
+											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Header}"
 											  TextWrapping="Wrap" />
 							<ContentPresenter x:Name="Description"
+											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Description}"
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 											  Foreground="{ThemeResource TextFillColorSecondaryBrush}"

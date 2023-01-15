@@ -160,6 +160,7 @@
     <ClInclude Include="Controls\SettingsCard.xaml.h">
       <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="Controls\SettingsCardAutomationPeer.h" />
     <ClInclude Include="Controls\SettingsExpander.xaml.h">
       <DependentUpon>Controls\SettingsExpander.xaml</DependentUpon>
     </ClInclude>
@@ -185,6 +186,7 @@
     <ClCompile Include="Controls\SettingsCard.xaml.properties.cpp">
       <DependentUpon>Controls\SettingsCard.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="Controls\SettingsCardAutomationPeer.cpp" />
     <ClCompile Include="Controls\SettingsExpander.xaml.cpp">
       <DependentUpon>Controls\SettingsExpander.xaml</DependentUpon>
     </ClCompile>
