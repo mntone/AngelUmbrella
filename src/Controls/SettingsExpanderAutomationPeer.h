@@ -9,9 +9,11 @@ namespace winrt::Mntone::AngelUmbrella::Automation::Peers::implementation {
 		// IAutomationPeerOverrides
 		hstring GetClassNameCore() const;
 		Microsoft::UI::Xaml::Automation::Peers::AutomationOrientation GetOrientationCore() const;
+		hstring GetHelpTextCore() const;
+		hstring GetNameCore() const;
 
 	private:
-		impl::com_ref<Controls::implementation::SettingsExpander> GetImpl() const;
+		com_ptr<Controls::implementation::SettingsExpander> GetImpl() const;
 	};
 
 }

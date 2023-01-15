@@ -334,6 +334,7 @@
 						</Grid.RowDefinitions>
 
 						<ToggleButton x:Name="ExpanderHeader"
+									  AutomationProperties.AutomationId="ExpanderToggleButton"
 									  Background="{TemplateBinding Background}"
 									  BackgroundSizing="{TemplateBinding BackgroundSizing}"
 									  BorderBrush="{TemplateBinding BorderBrush}"

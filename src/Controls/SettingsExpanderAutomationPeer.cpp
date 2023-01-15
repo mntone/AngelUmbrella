@@ -20,26 +20,57 @@ SettingsExpanderAutomationPeer::SettingsExpanderAutomationPeer(Controls::Setting
 	: SettingsExpanderAutomationPeer_base(owner) {
 }
 
-winrt::AutomationOrientation SettingsExpanderAutomationPeer::GetOrientationCore() const {
-	if (auto const impl = GetImpl()) {
-		switch (impl->Orientation()) {
-		case Orientation::Vertical:
-			return AutomationOrientation::Vertical;
-		case Orientation::Horizontal:
-			return AutomationOrientation::Horizontal;
-		}
-	}
-	return AutomationOrientation::None;
-}
-
 winrt::hstring SettingsExpanderAutomationPeer::GetClassNameCore() const {
 	return winrt::hstring { resources::Mntone_AngelUmbrella_Controls_SettingsExpander };
 }
 
-winrt::impl::com_ref<SettingsExpander> SettingsExpanderAutomationPeer::GetImpl() const {
-	impl::com_ref<SettingsExpander> impl { nullptr };
+winrt::AutomationOrientation SettingsExpanderAutomationPeer::GetOrientationCore() const {
+	AutomationOrientation orientation { __super::GetOrientationCore() };
+	if (AutomationOrientation::None == orientation) {
+		if (auto const impl { GetImpl() }) {
+			switch (impl->Orientation()) {
+			case Orientation::Vertical:
+				orientation = AutomationOrientation::Vertical;
+				break;
+			case Orientation::Horizontal:
+				orientation = AutomationOrientation::Horizontal;
+				break;
+			}
+		}
+	}
+	return orientation;
+}
+
+winrt::hstring SettingsExpanderAutomationPeer::GetHelpTextCore() const {
+	hstring helpText { __super::GetHelpTextCore() };
+	if (helpText.empty()) {
+		if (auto const impl { GetImpl() }) {
+			std::optional<hstring> description { impl->Description().try_as<hstring>() };
+			if (description && !description.value().empty()) {
+				helpText = description.value();
+			}
+		}
+	}
+	return helpText;
+}
+
+winrt::hstring SettingsExpanderAutomationPeer::GetNameCore() const {
+	hstring name { __super::GetNameCore() };
+	if (name.empty()) {
+		if (auto const impl { GetImpl() }) {
+			std::optional<hstring> header { impl->Header().try_as<hstring>() };
+			if (header && !header.value().empty()) {
+				name = header.value();
+			}
+		}
+	}
+	return name;
+}
+
+winrt::com_ptr<SettingsExpander> SettingsExpanderAutomationPeer::GetImpl() const {
+	com_ptr<SettingsExpander> impl { nullptr };
 	if (auto settingsExpander = Owner().try_as<SettingsExpander>()) {
-		settingsExpander.copy_to(impl.put());
+		impl = settingsExpander->get_strong();
 	}
 	return impl;
 }
