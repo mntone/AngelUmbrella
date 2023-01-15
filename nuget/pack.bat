@@ -17,7 +17,16 @@ for /f "tokens=3 delims=<>" %%a in (
 	'find /i "<AngelVersionPatch>" ^< "../src/version.props"'
 ) do set "patch=%%a"
 
-set version=%major%.%minor%.%patch%
+set "prerel="
+for /f "tokens=3 delims=<>" %%a in (
+	'find /i "<AngelVersionPreRelease>" ^< "../src/version.props"'
+) do set "prerel=%%a"
+
+if not "%prerel%" == "/AngelVersionPreRelease" (
+	set version=%major%.%minor%.%patch%-%prerel%
+) else (
+	set version=%major%.%minor%.%patch%
+)
 
 echo Detect Angel Umbrella version: %version%
 nuget pack Mntone.AngelUmbrella.nuspec -Version %version% -OutputDirectory "../BuildNugetPackages/"

@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
+		<AngelAuthor>mntone</AngelAuthor>
+		<AngelCopyright>Copyright (c) 2023 $(AngelAuthor). All rights reserved.</AngelCopyright>
 		<AngelVersionMajor>1</AngelVersionMajor>
-		<AngelVersionMinor>0</AngelVersionMinor>
-		<AngelVersionPatch>3</AngelVersionPatch>
-		<AngelVersionBuild Condition="$(AngelVersionBuild) == ''">0</AngelVersionBuild>
-		<AngelVersionRevision Condition="$(AngelVersionRevision) == ''">0</AngelVersionRevision>
+		<AngelVersionMinor>1</AngelVersionMinor>
+		<AngelVersionPatch>0</AngelVersionPatch>
+		<AngelVersionBuild Condition="$(AngelVersionBuild)==''">$([System.DateTime]::Now.ToString(`yyyy`))</AngelVersionBuild>
+		<AngelVersionRevision Condition="$(AngelVersionRevision)==''">$([System.DateTime]::Now.ToString(`MMdd`))</AngelVersionRevision>
+		<AngelVersionPreRelease>alpha1</AngelVersionPreRelease>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease.StartsWith(`alpha`))'">$(AngelVersionPreRelease.Substring(5))</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease.StartsWith(`beta`))'">$([MSBuild]::Add(1000, $([System.Convert]::ToUInt16($(AngelVersionPreRelease.Substring(4)), 10))))</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="$(AngelVersionPreReleaseId)==''">10000</AngelVersionPreReleaseId>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<ClCompile>
 			<PreprocessorDefinitions>
 				%(PreprocessorDefinitions);
+				ANGEL_AUTHOR=$(AngelAuthor);
+				ANGEL_COPYRIGHT=$(AngelCopyright);
 				ANGEL_VERSION_MAJOR=$(AngelVersionMajor);
 				ANGEL_VERSION_MINOR=$(AngelVersionMinor);
 				ANGEL_VERSION_PATCH=$(AngelVersionPatch);
 				ANGEL_VERSION_BUILD=$(AngelVersionBuild);
 				ANGEL_VERSION_REVISION=$(AngelVersionRevision);
+				ANGEL_VERSION_PRERELEASE=$(AngelVersionPreRelease);
+				ANGEL_VERSION_PREID=$(AngelVersionPreReleaseId);
 			</PreprocessorDefinitions>
 		</ClCompile>
 		<ResourceCompile>
 			<PreprocessorDefinitions>
 				%(PreprocessorDefinitions);
+				ANGEL_AUTHOR=$(AngelAuthor);
+				ANGEL_COPYRIGHT=$(AngelCopyright);
 				ANGEL_VERSION_MAJOR=$(AngelVersionMajor);
 				ANGEL_VERSION_MINOR=$(AngelVersionMinor);
 				ANGEL_VERSION_PATCH=$(AngelVersionPatch);
 				ANGEL_VERSION_BUILD=$(AngelVersionBuild);
 				ANGEL_VERSION_REVISION=$(AngelVersionRevision);
+				ANGEL_VERSION_PRERELEASE=$(AngelVersionPreRelease);
+				ANGEL_VERSION_PREID=$(AngelVersionPreReleaseId);
 			</PreprocessorDefinitions>
 		</ResourceCompile>
 	</ItemDefinitionGroup>

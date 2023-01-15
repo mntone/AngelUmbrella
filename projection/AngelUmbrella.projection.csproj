@@ -32,11 +32,13 @@
 
   <PropertyGroup>
     <Product>Angel Umbrella (C# projection)</Product>
-    <VersionPrefix>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)</VersionPrefix>
-    <AssemblyVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionBuild).$(AngelVersionRevision)</AssemblyVersion>
+    <VersionPrefix>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch).$(AngelVersionPreReleaseId)</VersionPrefix>
+    <VersionSuffix Condition="'$(AngelVersionPreRelease)'!=''">$(AngelVersionPreRelease)</VersionSuffix>
+    <AssemblyVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch).$(AngelVersionPreReleaseId)</AssemblyVersion>
     <FileVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionBuild).$(AngelVersionRevision)</FileVersion>
-    <Authors>mntone</Authors>
-    <Copyright>Copyright (c) 2023 mntone. All rights reserved.</Copyright>
+    <InformationalVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)-$(AngelVersionPreRelease)</InformationalVersion>
+    <Authors>$(AngelAuthor)</Authors>
+    <Copyright>$(AngelCopyright)</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
