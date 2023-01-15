@@ -78,7 +78,7 @@ namespace Mntone.AngelUmbrella
 		[interface_name("ISettingsCard", A98BF3E6-1595-4879-A198-93B5F6242233)]
 		[static_name("ISettingsCardStatics", 34C8763E-7086-5B2F-9117-4A2C78455171)]
 		[webhosthidden]
-		unsealed runtimeclass SettingsCard : Microsoft.UI.Xaml.Controls.Primitives.ButtonBase
+		unsealed runtimeclass SettingsCard : Microsoft.UI.Xaml.Controls.Button
 		{
 			SettingsCard();
 
@@ -143,7 +143,7 @@ namespace Mntone.AngelUmbrella
 	{
 		[interface_name("ISettingsCardAutomationPeer", D6653E09-9104-4C95-AA35-27970B7667EE)]
 	    [webhosthidden]
-		unsealed runtimeclass SettingsCardAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Microsoft.UI.Xaml.Automation.Provider.IInvokeProvider
+		unsealed runtimeclass SettingsCardAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.ButtonAutomationPeer
 		{
 		    SettingsCardAutomationPeer(Mntone.AngelUmbrella.Controls.SettingsCard owner);
 		}

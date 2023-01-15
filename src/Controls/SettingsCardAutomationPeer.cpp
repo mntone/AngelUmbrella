@@ -21,7 +21,7 @@ SettingsCardAutomationPeer::SettingsCardAutomationPeer(Controls::SettingsCard co
 }
 
 winrt::AutomationControlType SettingsCardAutomationPeer::GetAutomationControlTypeCore() const {
-	if (auto const impl = GetImpl()) {
+	if (auto const impl { GetImpl() }) {
 		if (impl->IsClickEnabled()) {
 			return AutomationControlType::Button;
 		}
@@ -34,19 +34,24 @@ winrt::hstring SettingsCardAutomationPeer::GetClassNameCore() const {
 }
 
 winrt::AutomationOrientation SettingsCardAutomationPeer::GetOrientationCore() const {
-	if (auto const impl = GetImpl()) {
-		switch (impl->Orientation()) {
-		case Orientation::Vertical:
-			return AutomationOrientation::Vertical;
-		case Orientation::Horizontal:
-			return AutomationOrientation::Horizontal;
+	AutomationOrientation orientation { __super::GetOrientationCore() };
+	if (AutomationOrientation::None == orientation) {
+		if (auto const impl { GetImpl() }) {
+			switch (impl->Orientation()) {
+			case Orientation::Vertical:
+				orientation = AutomationOrientation::Vertical;
+				break;
+			case Orientation::Horizontal:
+				orientation = AutomationOrientation::Horizontal;
+				break;
+			}
 		}
 	}
-	return __super::GetOrientationCore();
+	return orientation;
 }
 
-winrt::hstring SettingsCardAutomationPeer::GetFullDescriptionCore() const {
-	hstring helpText { __super::GetFullDescriptionCore() };
+winrt::hstring SettingsCardAutomationPeer::GetHelpTextCore() const {
+	hstring helpText { __super::GetHelpTextCore() };
 	if (helpText.empty()) {
 		if (auto const impl { GetImpl() }) {
 			std::optional<hstring> description { impl->Description().try_as<hstring>() };
@@ -71,14 +76,10 @@ winrt::hstring SettingsCardAutomationPeer::GetNameCore() const {
 	return name;
 }
 
-void SettingsCardAutomationPeer::Invoke() const {
-	//Owner().
-}
-
-winrt::impl::com_ref<SettingsCard> SettingsCardAutomationPeer::GetImpl() const {
-	impl::com_ref<SettingsCard> impl { nullptr };
+winrt::com_ptr<SettingsCard> SettingsCardAutomationPeer::GetImpl() const {
+	com_ptr<SettingsCard> impl { nullptr };
 	if (auto settingsCard = Owner().try_as<SettingsCard>()) {
-		settingsCard.copy_to(impl.put());
+		impl = settingsCard->get_strong();
 	}
 	return impl;
 }

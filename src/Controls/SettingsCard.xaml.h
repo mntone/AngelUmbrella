@@ -6,9 +6,10 @@ namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 	struct SettingsCard: SettingsCard_base<SettingsCard> {
 		SettingsCard() noexcept;
 
-		void OnApplyTemplate();
+		void OnApplyTemplate() const;
 		Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const;
 
+		// internal:
 		void OnPointerEntered(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
 		void OnPointerPressed(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
 		void OnPointerReleased(winrt::Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& args) const;
@@ -20,14 +21,12 @@ namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 	private:
 		static void OnIsEnabledChangedStatic(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& args);
 
-		inline void ClearContentAutomation() const;
-		inline void UpdateContentAutomation() const;
 		inline void UpdateActionIcon(bool isClickEnabled) const;
 
 	public:
 		inline void OnDescriptionChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
 		inline void OnHeaderIconChanged(winrt::Microsoft::UI::Xaml::Controls::IconElement const& newValue) const;
-		inline void OnHeaderChanged(winrt::Windows::Foundation::IInspectable const& oldValue, winrt::Windows::Foundation::IInspectable const& newValue) const;
+		inline void OnHeaderChanged(winrt::Windows::Foundation::IInspectable const& newValue) const;
 		inline void OnIsClickEnabledChanged(bool newValue, bool useTransitions = true) const;
 		inline void OnOrientationChanged(winrt::Microsoft::UI::Xaml::Controls::Orientation newValue) const;
 
@@ -69,8 +68,6 @@ namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 		static winrt::Microsoft::UI::Xaml::DependencyProperty OrientationProperty() noexcept { return props_.Orientation; }
 
 	private: // - Variables
-		bool loaded_;
-
 		struct DependencyProperties final {
 			void DelayInitIfNeeded();
 

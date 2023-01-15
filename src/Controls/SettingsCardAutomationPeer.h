@@ -10,14 +10,11 @@ namespace winrt::Mntone::AngelUmbrella::Automation::Peers::implementation {
 		Microsoft::UI::Xaml::Automation::Peers::AutomationControlType GetAutomationControlTypeCore() const;
 		hstring GetClassNameCore() const;
 		Microsoft::UI::Xaml::Automation::Peers::AutomationOrientation GetOrientationCore() const;
-		hstring GetFullDescriptionCore() const;
+		hstring GetHelpTextCore() const;
 		hstring GetNameCore() const;
 
-		// IInvokeProvider
-		void Invoke() const;
-
 	private:
-		impl::com_ref<Controls::implementation::SettingsCard> GetImpl() const;
+		com_ptr<Controls::implementation::SettingsCard> GetImpl() const;
 	};
 
 }
