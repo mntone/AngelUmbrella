@@ -4,7 +4,7 @@
 namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 
 	struct SettingsPanel: SettingsPanel_base<SettingsPanel> {
-		SettingsPanel() noexcept;
+		SettingsPanel();
 
 		void OnApplyTemplate() const;
 

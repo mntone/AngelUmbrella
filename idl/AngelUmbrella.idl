@@ -90,13 +90,13 @@ namespace Mntone.AngelUmbrella
 			Boolean IsClickEnabled;
 			Microsoft.UI.Xaml.Controls.Orientation Orientation;
 
-			static Microsoft.UI.Xaml.DependencyProperty ActionIconProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty ActionIconTooltipProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty HeaderProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty IsClickEnabledProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ActionIconProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ActionIconTooltipProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HeaderProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty IsClickEnabledProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
 		}
 
 		[constructor_name("ISettingsExpanderFactory", D8AE545F-BEB9-48A0-AD0F-5470C827D102)]
@@ -112,10 +112,10 @@ namespace Mntone.AngelUmbrella
 			Microsoft.UI.Xaml.Controls.IconElement HeaderIcon;
 			Microsoft.UI.Xaml.Controls.Orientation Orientation;
 
-			static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty ExpanderContentProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ExpanderContentProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
 		}
 
 		[constructor_name("ISettingsPanelFactory", 4899B1B1-8986-4B66-9D71-3F01886E0A09)]
@@ -131,10 +131,10 @@ namespace Mntone.AngelUmbrella
 			Object Header;
 			Microsoft.UI.Xaml.Controls.Orientation Orientation;
 
-			static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty HeaderProperty { get; };
-			static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HeaderIconProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HeaderProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
 		}
 
 	}

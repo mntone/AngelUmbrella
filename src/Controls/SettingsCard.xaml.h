@@ -4,7 +4,7 @@
 namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 
 	struct SettingsCard: SettingsCard_base<SettingsCard> {
-		SettingsCard() noexcept;
+		SettingsCard();
 
 		void OnApplyTemplate() const;
 		Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const;

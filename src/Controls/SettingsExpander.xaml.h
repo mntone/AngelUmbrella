@@ -4,7 +4,7 @@
 namespace winrt::Mntone::AngelUmbrella::Controls::implementation {
 
 	struct SettingsExpander: SettingsExpander_base<SettingsExpander> {
-		SettingsExpander() noexcept;
+		SettingsExpander();
 
 		void OnApplyTemplate() const;
 

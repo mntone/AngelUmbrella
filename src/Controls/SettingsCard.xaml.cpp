@@ -47,7 +47,7 @@ namespace winrt {
 
 using namespace winrt::Mntone::AngelUmbrella::Controls::implementation;
 
-SettingsCard::SettingsCard() noexcept {
+SettingsCard::SettingsCard() {
 	props_.DelayInitIfNeeded();
 	DefaultStyleKey(box_value(resources::Mntone_AngelUmbrella_Controls_SettingsCard));
 	DefaultStyleResourceUri(Uri { resources::Mntone_AngelUmbrella_Controls_SettingsCard_Uri });
