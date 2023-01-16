@@ -46,4 +46,4 @@ goto MAIN
 
 	REM Pack NuGet
 	echo Pack NuGet package
-	./pack.bat
+	./pack.cmd
