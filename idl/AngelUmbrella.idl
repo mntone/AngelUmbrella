@@ -57,6 +57,14 @@ namespace Mntone.AngelUmbrella
 		    BooleanToVisibilityConverter();
 		}
 
+		[interface_name("IDateTimeToStringConverter", 3EEE62D6-3584-41DC-9BE8-2911A9BB7F54)]
+		runtimeclass DateTimeToStringConverter : Microsoft.UI.Xaml.Data.IValueConverter
+		{
+			DateTimeToStringConverter();
+
+			[noexcept] String Format;
+		}
+
 		[interface_name("IInvertedBooleanConverter", 0CA51023-05A7-474E-9EC2-00E6F1AFD194)]
 	    runtimeclass InvertedBooleanConverter : Microsoft.UI.Xaml.Data.IValueConverter
 		{

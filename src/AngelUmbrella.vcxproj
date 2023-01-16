@@ -168,6 +168,7 @@
       <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h" />
+    <ClInclude Include="Converters\DateTimeToStringConverter.h" />
     <ClInclude Include="Converters\InvertedBooleanConverter.h" />
     <ClInclude Include="Converters\StringIsPresentToVisibilityConverter.h" />
     <ClInclude Include="Helpers\DependencyPropertyHelper.h" />
@@ -200,6 +201,7 @@
       <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp" />
+    <ClCompile Include="Converters\DateTimeToStringConverter.cpp" />
     <ClCompile Include="Converters\InvertedBooleanConverter.cpp" />
     <ClCompile Include="Converters\StringIsPresentToVisibilityConverter.cpp" />
     <ClCompile Include="Helpers\XamlHelpers.cpp" />

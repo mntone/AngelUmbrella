@@ -3,7 +3,7 @@
 namespace Mntone.AngelUmbrella.Tests.Converters
 {
 	[TestClass]
-	public sealed class StringIsPresentToVisibilityConverterTest : StringConverterTestSupport<StringIsPresentToVisibilityConverter, Visibility>
+	public sealed class StringIsPresentToVisibilityConverterTest : StringInputConverterTestSupport<StringIsPresentToVisibilityConverter, Visibility>
 	{
 		[TestMethod]
 		public void ConvertNullptr()
