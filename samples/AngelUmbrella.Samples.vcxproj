@@ -158,6 +158,9 @@
       <DependentUpon>SettingsWindow_DetailPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="SettingsWindow_OddEvenPage.xaml.h">
+      <DependentUpon>SettingsWindow_OddEvenPage.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="SettingsWindow_RootPage.xaml.h">
       <DependentUpon>SettingsWindow_RootPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -172,6 +175,7 @@
     <Page Include="SettingsWindow_DetailPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SettingsWindow_OddEvenPage.xaml" />
     <Page Include="SettingsWindow_RootPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -195,6 +199,9 @@
       <DependentUpon>SettingsWindow_DetailPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="SettingsWindow_OddEvenPage.xaml.cpp">
+      <DependentUpon>SettingsWindow_OddEvenPage.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="SettingsWindow_RootPage.xaml.cpp">
       <DependentUpon>SettingsWindow_RootPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -215,6 +222,10 @@
     </Midl>
     <Midl Include="SettingsWindow_DetailPage.idl">
       <DependentUpon>SettingsWindow_DetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="SettingsWindow_OddEvenPage.idl">
+      <DependentUpon>SettingsWindow_OddEvenPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
     <Midl Include="SettingsWindow_RootPage.idl">

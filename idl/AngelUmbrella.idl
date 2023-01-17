@@ -145,6 +145,15 @@ namespace Mntone.AngelUmbrella
 			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
 		}
 
+		[interface_name("IOddEvenStyleSelector", 3B317E48-32FE-4922-8812-671E697B31B1)]
+		runtimeclass OddEvenStyleSelector : Microsoft.UI.Xaml.Controls.StyleSelector
+		{
+		    OddEvenStyleSelector();
+
+			[noexcept] Microsoft.UI.Xaml.Style OddStyle;
+			[noexcept] Microsoft.UI.Xaml.Style EvenStyle;
+		}
+
 	}
 
 	namespace Automation.Peers

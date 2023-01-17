@@ -6,6 +6,8 @@ namespace winrt::Mntone::AngelUmbrella::Samples::implementation {
 	struct SettingsWindow: SettingsWindowT<SettingsWindow> {
 		SettingsWindow();
 
+		void NavigationViewSelectionChanged(Microsoft::UI::Xaml::Controls::NavigationView const& sender, Microsoft::UI::Xaml::Controls::NavigationViewSelectionChangedEventArgs const& args);
+
 		void NavigationViewDisplayModeChanged(Microsoft::UI::Xaml::Controls::NavigationView const& sender, Microsoft::UI::Xaml::Controls::NavigationViewDisplayModeChangedEventArgs const& args);
 		void NavigationViewPaneClosing(Microsoft::UI::Xaml::Controls::NavigationView const& sender, Microsoft::UI::Xaml::Controls::NavigationViewPaneClosingEventArgs const& args);
 		void NavigationViewPaneOpening(Microsoft::UI::Xaml::Controls::NavigationView const& sender, Windows::Foundation::IInspectable const& args);

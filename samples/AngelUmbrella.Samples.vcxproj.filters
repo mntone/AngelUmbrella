@@ -6,8 +6,9 @@
   <ItemGroup>
     <Page Include="DesktopAcrylicWindow.xaml" />
     <Page Include="SettingsWindow.xaml" />
-    <Page Include="SettingsWindow_RootPage.xaml" />
     <Page Include="SettingsWindow_DetailPage.xaml" />
+    <Page Include="SettingsWindow_OddEvenPage.xaml" />
+    <Page Include="SettingsWindow_RootPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />

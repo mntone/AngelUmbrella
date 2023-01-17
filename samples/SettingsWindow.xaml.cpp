@@ -9,6 +9,7 @@
 #include <winrt/Microsoft.UI.Windowing.h>
 
 #include "SettingsWindow_RootPage.xaml.h"
+#include "SettingsWindow_OddEvenPage.xaml.h"
 
 namespace resources {
 	constexpr std::wstring_view Mntone_AngelUmbrella_Samples_ClassPointer = L"Mntone.AngelUmbrella.Samples.ClassPointer";
@@ -69,6 +70,18 @@ SettingsWindow::SettingsWindow() {
 
 	// Navigate
 	frame.Navigate(xaml_typename<winrt::SettingsWindow_RootPage>(), nullptr, SuppressNavigationTransitionInfo());
+}
+
+void SettingsWindow::NavigationViewSelectionChanged(NavigationView const& /*sender*/, NavigationViewSelectionChangedEventArgs const& args) {
+	using namespace std::string_view_literals;
+
+	std::optional<hstring> name { args.SelectedItem().as<NavigationViewItem>().Content().try_as<hstring>() };
+	Frame frame { rootFrame() };
+	if (name && L"OddEvenPage"sv == name.value()) {
+		frame.Navigate(xaml_typename<winrt::SettingsWindow_OddEvenPage>());
+	} else {
+		frame.Navigate(xaml_typename<winrt::SettingsWindow_RootPage>());
+	}
 }
 
 void SettingsWindow::OnPointerPressed(IInspectable const& /*sender*/, PointerRoutedEventArgs const& args) {

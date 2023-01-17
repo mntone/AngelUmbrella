@@ -1,0 +1,10 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+
+	[interface_name("ISettingsWindow_OddEvenPage", A98BF3E6-1595-4879-A198-93B5F6242233)]
+    runtimeclass SettingsWindow_OddEvenPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        SettingsWindow_OddEvenPage();
+    }
+
+}
