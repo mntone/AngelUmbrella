@@ -91,7 +91,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalOptions>%(AdditionalOptions) /bigobj /Zm200</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /d1trimfile:"$(ProjectDir)\" /bigobj /Zm200</AdditionalOptions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>

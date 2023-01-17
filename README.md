@@ -10,9 +10,11 @@ https://user-images.githubusercontent.com/901816/211709015-77fee141-17b7-45e6-a9
   - **DesktopAcrylicHelper** (C++) / **DesktopAcrylicControllerExtensions** (C#) - Provide to set acrylic colors (Choose assets from `Theme` and `Kind`).
 - *Mntone.AngelUmbrella.Converters*
   - **BooleanToVisibilityConverter** - Convert from *bool* to *Microsoft.UI.Xaml.Visibility* (TwoWay).
+  - **DateTimeToStringConverter** - Convert from *DateTime* (C++) / *DateTimeOffset* (C#) to *hstring* (OneWay).
   - **InvertedBooleanConverterTest** - Convert from *bool* to inverted *bool* (TwoWay).
   - **StringIsPresentToVisibilityConverter** - Convert from *hstring* to *Microsoft.UI.Xaml.Visibility* (OneWay only).
-- *Mntone.AngelUmbrella.Controls* (*Mntone.AngelUmbrella.UI.Controls* in <u>Version 1.0.x</u>)
+- *Mntone.AngelUmbrella.Controls*
+  - **OddEvenStyleSelector** - Provide to choose the odd/even style.
   - **SettingsCard** - Provide basic settings card.
   - **SettingsExpander** - Provide settings card with expander.
   - **SettingsPanel** - Provide settings layout in items control, such as `ListView` or `GridView`, with the style `CardListViewItemStyle`.

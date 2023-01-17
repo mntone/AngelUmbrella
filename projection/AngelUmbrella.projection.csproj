@@ -36,7 +36,8 @@
     <VersionSuffix Condition="'$(AngelVersionPreRelease)'!=''">$(AngelVersionPreRelease)</VersionSuffix>
     <AssemblyVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch).$(AngelVersionPreReleaseId)</AssemblyVersion>
     <FileVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionBuild).$(AngelVersionRevision)</FileVersion>
-    <InformationalVersion>$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)-$(AngelVersionPreRelease)</InformationalVersion>
+    <InformationalVersion Condition="$(AngelVersionPreReleaseId)&lt;10000">$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)-$(AngelVersionPreRelease)</InformationalVersion>
+    <InformationalVersion Condition="$(AngelVersionPreReleaseId)&gt;=10000">$(AngelVersionMajor).$(AngelVersionMinor).$(AngelVersionPatch)</InformationalVersion>
     <Authors>$(AngelAuthor)</Authors>
     <Copyright>$(AngelCopyright)</Copyright>
   </PropertyGroup>
