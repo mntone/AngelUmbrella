@@ -165,4 +165,28 @@ namespace Mntone.AngelUmbrella
 		    SettingsCardAutomationPeer(Mntone.AngelUmbrella.Controls.SettingsCard owner);
 		}
 	}
+
+	namespace Navigation
+	{
+
+		[static_name("INavigationPropertiesStatics", 514F7EE7-3A01-51CD-AA81-C320C329FCDC)]
+		static runtimeclass NavigationProperties
+		{
+			static void Initialize();
+
+			static Windows.UI.Xaml.Interop.TypeName GetPageType(Microsoft.UI.Xaml.Controls.NavigationViewItem item);
+			static void SetPageType(Microsoft.UI.Xaml.Controls.NavigationViewItem item, Windows.UI.Xaml.Interop.TypeName value);
+
+			static Object GetParameter(Microsoft.UI.Xaml.Controls.NavigationViewItem item);
+			static void SetParameter(Microsoft.UI.Xaml.Controls.NavigationViewItem item, Object value);
+
+			static Microsoft.UI.Xaml.Media.Animation.NavigationTransitionInfo GetTransitionInfo(Microsoft.UI.Xaml.Controls.NavigationViewItem item);
+			static void SetTransitionInfo(Microsoft.UI.Xaml.Controls.NavigationViewItem item, Microsoft.UI.Xaml.Media.Animation.NavigationTransitionInfo value);
+
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty PageTypeProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ParameterProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty TransitionInfoProperty { get; };
+		}
+
+	}
 }

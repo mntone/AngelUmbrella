@@ -19,6 +19,9 @@
     <Filter Include="Helpers">
       <UniqueIdentifier>{e4cfde82-f621-42f3-aa13-dad288a8f072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Navigation">
+      <UniqueIdentifier>{e1cda238-ec8f-448f-8e41-39c6a107cb1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="AngelUmbrella.def" />
@@ -76,6 +79,9 @@
     <ClInclude Include="Helpers\XamlHelpers.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Navigation\NavigationProperties.h">
+      <Filter>Navigation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -103,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="Helpers\XamlHelpers.cpp">
       <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Navigation\NavigationProperties.cpp">
+      <Filter>Navigation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

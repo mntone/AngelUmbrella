@@ -32,7 +32,7 @@ namespace winrt {
 #endif
 
 #define DEFINE_DP(__PROPNAME__, __TYPE__, __PARENT_TYPE__) \
-	DEFINE_DP_METADATA(__PROPNAME__, __TYPE__, __PARENT_TYPE__, ::winrt::PropertyMetadata(::winrt::Mntone::AngelUmbrella::Helpers::ValueHelper<__TYPE__>::DefaultValue()))
+	DEFINE_DP_METADATA(__PROPNAME__, __TYPE__, __PARENT_TYPE__, nullptr)
 
 #define DEFINE_DP_CALLBACK(__PROPNAME__, __TYPE__, __PARENT_TYPE__, __CALLBACK__) \
 	DEFINE_DP_METADATA(__PROPNAME__, __TYPE__, __PARENT_TYPE__, \

@@ -175,6 +175,7 @@
     <ClInclude Include="Helpers\DependencyPropertyHelper.h" />
     <ClInclude Include="Helpers\ValueHelper.h" />
     <ClInclude Include="Helpers\XamlHelpers.h" />
+    <ClInclude Include="Navigation\NavigationProperties.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -207,6 +208,7 @@
     <ClCompile Include="Converters\InvertedBooleanConverter.cpp" />
     <ClCompile Include="Converters\StringIsPresentToVisibilityConverter.cpp" />
     <ClCompile Include="Helpers\XamlHelpers.cpp" />
+    <ClCompile Include="Navigation\NavigationProperties.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

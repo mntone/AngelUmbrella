@@ -7,6 +7,7 @@
 #include <microsoft.ui.xaml.window.h>
 #include <winrt/Microsoft.UI.Interop.h>
 #include <winrt/Microsoft.UI.Windowing.h>
+#include <winrt/Mntone.AngelUmbrella.Navigation.h>
 
 #include "SettingsWindow_RootPage.xaml.h"
 #include "SettingsWindow_OddEvenPage.xaml.h"
@@ -20,6 +21,7 @@ namespace winrt {
 	using namespace ::winrt::Windows::Globalization;
 	using namespace ::winrt::Windows::System;
 	using namespace ::winrt::Windows::UI::Core;
+	using namespace ::winrt::Windows::UI::Xaml::Interop;
 
 	using namespace ::winrt::Microsoft::UI;
 	using namespace ::winrt::Microsoft::UI::Input;
@@ -29,6 +31,7 @@ namespace winrt {
 	using namespace ::winrt::Microsoft::UI::Xaml::Input;
 	using namespace ::winrt::Microsoft::UI::Xaml::Media::Animation;
 
+	using namespace ::winrt::Mntone::AngelUmbrella::Navigation;
 	using namespace ::winrt::Mntone::AngelUmbrella::Samples;
 }
 
@@ -73,15 +76,10 @@ SettingsWindow::SettingsWindow() {
 }
 
 void SettingsWindow::NavigationViewSelectionChanged(NavigationView const& /*sender*/, NavigationViewSelectionChangedEventArgs const& args) {
-	using namespace std::string_view_literals;
-
-	std::optional<hstring> name { args.SelectedItem().as<NavigationViewItem>().Content().try_as<hstring>() };
+	NavigationViewItem item { args.SelectedItem().as<NavigationViewItem>() };
 	Frame frame { rootFrame() };
-	if (name && L"OddEvenPage"sv == name.value()) {
-		frame.Navigate(xaml_typename<winrt::SettingsWindow_OddEvenPage>());
-	} else {
-		frame.Navigate(xaml_typename<winrt::SettingsWindow_RootPage>());
-	}
+	TypeName pageTypeName { NavigationProperties::GetPageType(item) }; // Require NavigationProperties::Initialize() (Check App.xaml.h)
+	frame.Navigate(pageTypeName);
 }
 
 void SettingsWindow::OnPointerPressed(IInspectable const& /*sender*/, PointerRoutedEventArgs const& args) {

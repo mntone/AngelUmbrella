@@ -13,6 +13,9 @@ namespace winrt {
 using namespace winrt::Mntone::AngelUmbrella::Samples::implementation;
 
 App::App() {
+	// Require vvv HERE vvv to use NavigationProperties.
+	Navigation::NavigationProperties::Initialize();
+
 	InitializeComponent();
 
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
