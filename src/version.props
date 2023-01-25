@@ -9,9 +9,11 @@
 		<AngelVersionBuild Condition="$(AngelVersionBuild)==''">$([System.DateTime]::Now.ToString(`yyyy`))</AngelVersionBuild>
 		<AngelVersionRevision Condition="$(AngelVersionRevision)==''">$([System.DateTime]::Now.ToString(`MMdd`))</AngelVersionRevision>
 		<AngelVersionPreRelease></AngelVersionPreRelease>
-		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease.StartsWith(`alpha`))'">$(AngelVersionPreRelease.Substring(5))</AngelVersionPreReleaseId>
-		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease.StartsWith(`beta`))'">$([MSBuild]::Add(1000, $([System.Convert]::ToUInt16($(AngelVersionPreRelease.Substring(4)), 10))))</AngelVersionPreReleaseId>
-		<AngelVersionPreReleaseId Condition="$(AngelVersionPreReleaseId)==''">10000</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease)'=='alpha'">0</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(AngelVersionPreRelease.StartsWith(`alpha`))'">$(AngelVersionPreRelease.Substring(5))</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(RWinRTVersionPreRelease)'=='beta'">1000</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(AngelVersionPreRelease.StartsWith(`beta`))'">$([MSBuild]::Add(1000, $([System.Convert]::ToUInt16($(AngelVersionPreRelease.Substring(4)), 10))))</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'==''">10000</AngelVersionPreReleaseId>
 	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<ClCompile>
