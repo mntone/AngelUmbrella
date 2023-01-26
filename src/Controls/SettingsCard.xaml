@@ -160,7 +160,6 @@
 											  Content="{TemplateBinding HeaderIcon}"
 											  FontFamily="{StaticResource SymbolThemeFontFamily}"
 											  FontSize="12"
-											  Foreground="{TemplateBinding Foreground}"
 											  HighContrastAdjustment="None"
 											  IsTextScaleFactorEnabled="False" />
 						</Viewbox>
@@ -171,9 +170,9 @@
 							<ContentPresenter x:Name="Header"
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Header}"
-											  Foreground="{TemplateBinding Foreground}"
 											  TextWrapping="Wrap" />
-							<ContentPresenter x:Name="Description"
+							<ContentPresenter x:DeferLoadStrategy="Lazy"
+											  x:Name="Description"
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Description}"
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
@@ -194,7 +193,6 @@
 										CornerRadius="{StaticResource ControlCornerRadius}"
 										FontFamily="{StaticResource SymbolThemeFontFamily}"
 										FontSize="12"
-										Foreground="{TemplateBinding Foreground}"
 										Height="{StaticResource SettingsCardActionButtonHeight}"
 										HighContrastAdjustment="None"
 										HorizontalAlignment="Right"

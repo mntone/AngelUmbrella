@@ -91,7 +91,8 @@
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Header}"
 											  TextWrapping="Wrap" />
-							<ContentPresenter x:Name="Description"
+							<ContentPresenter x:DeferLoadStrategy="Lazy"
+											  x:Name="Description"
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Description}"
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"

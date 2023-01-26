@@ -22,15 +22,15 @@ void SettingsCard::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_DP_METADATA(
 		ActionIcon,
-		winrt::Microsoft::UI::Xaml::Controls::IconElement,
+		Microsoft::UI::Xaml::Controls::IconElement,
 		SettingsCard,
-		winrt::PropertyMetadata(winrt::box_value(winrt::hstring(L"\ue974"))));
+		PropertyMetadata(box_value(hstring(L"\ue974"))));
 
 	DEFINE_DP_METADATA(
 		ActionIconTooltip,
-		winrt::hstring,
+		hstring,
 		SettingsCard,
-		winrt::PropertyMetadata(winrt::box_value(winrt::hstring(L"More"))));
+		PropertyMetadata(box_value(hstring(L"More"))));
 
 	DEFINE_DP_CALLBACK(
 		Description,
@@ -40,7 +40,7 @@ void SettingsCard::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_DP_CALLBACK(
 		HeaderIcon,
-		winrt::Microsoft::UI::Xaml::Controls::IconElement,
+		Microsoft::UI::Xaml::Controls::IconElement,
 		SettingsCard,
 		&SettingsCard::OnHeaderIconChangedStatic);
 
@@ -58,11 +58,11 @@ void SettingsCard::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_DP_METADATA(
 		Orientation,
-		winrt::Microsoft::UI::Xaml::Controls::Orientation,
+		Microsoft::UI::Xaml::Controls::Orientation,
 		SettingsCard,
-		winrt::PropertyMetadata(
-			winrt::box_value(winrt::Microsoft::UI::Xaml::Controls::Orientation::Horizontal),
-			winrt::PropertyChangedCallback(&SettingsCard::OnOrientationChangedStatic)));
+		PropertyMetadata(
+			box_value(Microsoft::UI::Xaml::Controls::Orientation::Horizontal),
+			PropertyChangedCallback(&SettingsCard::OnOrientationChangedStatic)));
 
 	initialized_ = true;
 }

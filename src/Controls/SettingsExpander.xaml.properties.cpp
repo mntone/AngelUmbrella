@@ -30,16 +30,16 @@ void SettingsExpander::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_DP_CALLBACK(
 		HeaderIcon,
-		winrt::Microsoft::UI::Xaml::Controls::IconElement,
+		Microsoft::UI::Xaml::Controls::IconElement,
 		SettingsExpander,
 		&SettingsExpander::OnHeaderIconChangedStatic);
 
 	DEFINE_DP_METADATA(
 		Orientation,
-		winrt::Microsoft::UI::Xaml::Controls::Orientation,
+		Microsoft::UI::Xaml::Controls::Orientation,
 		SettingsExpander,
-		winrt::PropertyMetadata(
-			winrt::box_value(winrt::Microsoft::UI::Xaml::Controls::Orientation::Horizontal)));
+		PropertyMetadata(
+			box_value(Microsoft::UI::Xaml::Controls::Orientation::Horizontal)));
 
 	initialized_ = true;
 }

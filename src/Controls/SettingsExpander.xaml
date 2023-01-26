@@ -379,7 +379,8 @@
 													  Content="{TemplateBinding Header}"
 													  Foreground="{TemplateBinding Foreground}"
 													  TextWrapping="Wrap" />
-									<ContentPresenter x:Name="Description"
+									<ContentPresenter x:DeferLoadStrategy="Lazy"
+													  x:Name="Description"
 													  Content="{TemplateBinding Description}"
 													  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 													  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
