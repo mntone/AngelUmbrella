@@ -177,6 +177,7 @@
     <ClInclude Include="Helpers\XamlHelpers.h" />
     <ClInclude Include="Navigation\NavigationProperties.h" />
     <ClInclude Include="Triggers\ControlSizeTrigger.h" />
+    <ClInclude Include="Triggers\ControlWidthTrigger.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -212,6 +213,8 @@
     <ClCompile Include="Navigation\NavigationProperties.cpp" />
     <ClCompile Include="Triggers\ControlSizeTrigger.cpp" />
     <ClCompile Include="Triggers\ControlSizeTrigger.properties.cpp" />
+    <ClCompile Include="Triggers\ControlWidthTrigger.cpp" />
+    <ClCompile Include="Triggers\ControlWidthTrigger.properties.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

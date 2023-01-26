@@ -208,6 +208,19 @@ namespace Mntone.AngelUmbrella
 			[noexcept] static Microsoft.UI.Xaml.DependencyProperty TargetElementProperty { get; };
 		}
 
+		[interface_name("IControlWidthTrigger", C5562E80-F6FF-4870-902C-2628222E8AF5)]
+		[static_name("IControlWidthTriggerStatics", 9A821004-971E-445A-B6E5-8A92D032B537)]
+		runtimeclass ControlWidthTrigger : Microsoft.UI.Xaml.StateTriggerBase
+		{
+			ControlWidthTrigger();
+
+			Double MinWidth;
+			Microsoft.UI.Xaml.FrameworkElement TargetElement;
+
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty MinWidthProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty TargetElementProperty { get; };
+		}
+
 	}
 
 }

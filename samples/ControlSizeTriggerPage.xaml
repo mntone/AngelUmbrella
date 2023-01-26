@@ -7,6 +7,11 @@
 	  mc:Ignorable="d">
 
 	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
 		<VisualStateManager.VisualStateGroups>
 			<VisualStateGroup x:Name="LayoutVisualStates">
 				<VisualState x:Name="WideLayout">
@@ -25,10 +30,43 @@
 								Value="Orange" />
 						<Setter Target="ContentElement.FontSize"
 								Value="24" />
+						<Setter Target="ContentElement.FontWeight"
+								Value="Bold" />
 						<Setter Target="ContentElement.Foreground"
 								Value="White" />
 						<Setter Target="ContentElement.Text"
 								Value="Less than 641" />
+						<Setter Target="DescriptionElement.Foreground"
+								Value="White" />
+					</VisualState.Setters>
+				</VisualState>
+			</VisualStateGroup>
+
+			<VisualStateGroup x:Name="LayoutVisualStates2">
+				<VisualState x:Name="WideLayout2">
+					<VisualState.StateTriggers>
+						<angel:ControlWidthTrigger TargetElement="{x:Bind TargetElement}"
+												   MinWidth="601" />
+					</VisualState.StateTriggers>
+				</VisualState>
+				<VisualState x:Name="NarrowLayout2">
+					<VisualState.StateTriggers>
+						<angel:ControlWidthTrigger TargetElement="{x:Bind TargetElement}"
+												   MinWidth="0" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+						<Setter Target="TargetElement2.Background"
+								Value="DarkGreen" />
+						<Setter Target="ContentElement2.FontSize"
+								Value="24" />
+						<Setter Target="ContentElement2.FontWeight"
+								Value="Bold" />
+						<Setter Target="ContentElement2.Foreground"
+								Value="White" />
+						<Setter Target="ContentElement2.Text"
+								Value="Less than 601" />
+						<Setter Target="DescriptionElement2.Foreground"
+								Value="White" />
 					</VisualState.Setters>
 				</VisualState>
 			</VisualStateGroup>
@@ -36,10 +74,28 @@
 
 		<Border x:Name="TargetElement"
 				Background="AntiqueWhite">
-			<TextBlock x:Name="ContentElement"
-					   HorizontalAlignment="Center"
-					   Text="Equal to or Greater than 641"
-					   VerticalAlignment="Center" />
+			<StackPanel VerticalAlignment="Center">
+				<TextBlock x:Name="ContentElement"
+						   HorizontalAlignment="Center"
+						   Text="Equal to or Greater than 641"
+						   VerticalAlignment="Center" />
+				<TextBlock x:Name="DescriptionElement"
+						   HorizontalAlignment="Center"
+						   Text="(ControlSizeTrigger)" />
+			</StackPanel>
+		</Border>
+
+		<Border x:Name="TargetElement2"
+				Grid.Row="1"
+				Background="Aquamarine">
+			<StackPanel VerticalAlignment="Center">
+				<TextBlock x:Name="ContentElement2"
+						   HorizontalAlignment="Center"
+						   Text="Equal to or Greater than 601" />
+				<TextBlock x:Name="DescriptionElement2"
+						   HorizontalAlignment="Center"
+						   Text="(ControlWidthTrigger - width only)" />
+			</StackPanel>
 		</Border>
 	</Grid>
 </Page>
