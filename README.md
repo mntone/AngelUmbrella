@@ -20,6 +20,9 @@ https://user-images.githubusercontent.com/901816/211709015-77fee141-17b7-45e6-a9
   - **SettingsPanel** - Provide settings layout in items control, such as `ListView` or `GridView`, with the style `CardListViewItemStyle`.
 - *Mntone.AngelUmbrella.Navigation*
   - **NavigationProperties** - Provide xaml-friendly navigation data.
+- *Mntone.AngelUmbrella.Triggers*
+  - **ControlSizeTrigger** - Provide control size based trigger.
+  - **ControlWidthTrigger** - Provide control <u>width</u> based trigger. This is triggered by width only.
 
 ## Requirements
 

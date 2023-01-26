@@ -5,7 +5,7 @@
 		<AngelCopyright>Copyright (c) 2023 $(AngelAuthor). All rights reserved.</AngelCopyright>
 		<AngelVersionMajor>1</AngelVersionMajor>
 		<AngelVersionMinor>1</AngelVersionMinor>
-		<AngelVersionPatch>1</AngelVersionPatch>
+		<AngelVersionPatch>2</AngelVersionPatch>
 		<AngelVersionBuild Condition="$(AngelVersionBuild)==''">$([System.DateTime]::Now.ToString(`yyyy`))</AngelVersionBuild>
 		<AngelVersionRevision Condition="$(AngelVersionRevision)==''">$([System.DateTime]::Now.ToString(`MMdd`))</AngelVersionRevision>
 		<AngelVersionPreRelease></AngelVersionPreRelease>
