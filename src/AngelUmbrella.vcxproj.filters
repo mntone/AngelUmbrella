@@ -22,6 +22,9 @@
     <Filter Include="Navigation">
       <UniqueIdentifier>{e1cda238-ec8f-448f-8e41-39c6a107cb1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Triggers">
+      <UniqueIdentifier>{6fdada1b-7dfe-454c-bc4b-4a66277c2cd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="AngelUmbrella.def" />
@@ -82,6 +85,9 @@
     <ClInclude Include="Navigation\NavigationProperties.h">
       <Filter>Navigation</Filter>
     </ClInclude>
+    <ClInclude Include="Triggers\ControlSizeTrigger.h">
+      <Filter>Triggers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -112,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="Navigation\NavigationProperties.cpp">
       <Filter>Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="Triggers\ControlSizeTrigger.cpp">
+      <Filter>Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="Triggers\ControlSizeTrigger.properties.cpp">
+      <Filter>Triggers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

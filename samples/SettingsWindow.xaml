@@ -54,6 +54,14 @@
 								  Glyph="&#xE71C;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
+				<NavigationViewItem Content="ControlSizeTriggerPage"
+									nav:NavigationProperties.PageType="local:ControlSizeTriggerPage">
+					<NavigationViewItem.Icon>
+						<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}"
+								  FontSize="12"
+								  Glyph="&#xEBE7;" />
+					</NavigationViewItem.Icon>
+				</NavigationViewItem>
 			</NavigationView.MenuItems>
 
 			<Frame x:Name="rootFrame">

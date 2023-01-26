@@ -1,0 +1,10 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+	[interface_name("IControlSizeTriggerPage", EBB6A4DC-0680-4339-B330-D5B79537AF8F)]
+	runtimeclass ControlSizeTriggerPage : Microsoft.UI.Xaml.Controls.Page
+	{
+		ControlSizeTriggerPage();
+
+		Microsoft.UI.Xaml.Controls.Border TargetElement { get; };
+	}
+}

@@ -1,0 +1,45 @@
+<Page x:Class="Mntone.AngelUmbrella.Samples.ControlSizeTriggerPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:angel="using:Mntone.AngelUmbrella.Triggers"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  mc:Ignorable="d">
+
+	<Grid>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="LayoutVisualStates">
+				<VisualState x:Name="WideLayout">
+					<VisualState.StateTriggers>
+						<angel:ControlSizeTrigger TargetElement="{x:Bind TargetElement}"
+												  MinWidth="641" />
+					</VisualState.StateTriggers>
+				</VisualState>
+				<VisualState x:Name="NarrowLayout">
+					<VisualState.StateTriggers>
+						<angel:ControlSizeTrigger TargetElement="{x:Bind TargetElement}"
+												  MinWidth="0" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+						<Setter Target="TargetElement.Background"
+								Value="Orange" />
+						<Setter Target="ContentElement.FontSize"
+								Value="24" />
+						<Setter Target="ContentElement.Foreground"
+								Value="White" />
+						<Setter Target="ContentElement.Text"
+								Value="Less than 641" />
+					</VisualState.Setters>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+
+		<Border x:Name="TargetElement"
+				Background="AntiqueWhite">
+			<TextBlock x:Name="ContentElement"
+					   HorizontalAlignment="Center"
+					   Text="Equal to or Greater than 641"
+					   VerticalAlignment="Center" />
+		</Border>
+	</Grid>
+</Page>

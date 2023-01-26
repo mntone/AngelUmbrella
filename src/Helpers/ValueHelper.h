@@ -67,4 +67,15 @@ namespace winrt::Mntone::AngelUmbrella::Helpers {
 		}
 	};
 
+	template<>
+	struct ValueHelper<double, void> final {
+		static inline ::winrt::Windows::Foundation::IInspectable DefaultValue() noexcept {
+			return ::winrt::box_value<double>(0.0);
+		}
+
+		static inline bool HasValue(::winrt::Windows::Foundation::IInspectable const& value) noexcept {
+			return nullptr != value;
+		}
+	};
+
 }

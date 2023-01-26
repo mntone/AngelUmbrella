@@ -147,6 +147,9 @@
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="ControlSizeTriggerPage.xaml.h">
+      <DependentUpon>ControlSizeTriggerPage.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="DesktopAcrylicWindow.xaml.h">
       <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -168,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
+    <Page Include="ControlSizeTriggerPage.xaml" />
     <Page Include="DesktopAcrylicWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -186,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ControlSizeTriggerPage.xaml.cpp">
+      <DependentUpon>ControlSizeTriggerPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="DesktopAcrylicWindow.xaml.cpp">
       <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>
@@ -211,6 +218,10 @@
     <Midl Include="App.idl">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="ControlSizeTriggerPage.idl">
+      <SubType>Code</SubType>
+      <DependentUpon>ControlSizeTriggerPage.xaml</DependentUpon>
     </Midl>
     <Midl Include="DesktopAcrylicWindow.idl">
       <DependentUpon>DesktopAcrylicWindow.xaml</DependentUpon>

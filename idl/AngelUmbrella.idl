@@ -189,4 +189,25 @@ namespace Mntone.AngelUmbrella
 		}
 
 	}
+
+	namespace Triggers
+	{
+
+		[interface_name("IControlSizeTrigger", E82D709F-3699-4A90-998A-3243D97300F9)]
+		[static_name("IControlSizeTriggerStatics", 79AE7071-EBAA-4F82-9EF5-5DC05945F7C1)]
+		runtimeclass ControlSizeTrigger : Microsoft.UI.Xaml.StateTriggerBase
+		{
+			ControlSizeTrigger();
+
+			Double MinWidth;
+			Double MinHeight;
+			Microsoft.UI.Xaml.FrameworkElement TargetElement;
+
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty MinWidthProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty MinHeightProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty TargetElementProperty { get; };
+		}
+
+	}
+
 }
