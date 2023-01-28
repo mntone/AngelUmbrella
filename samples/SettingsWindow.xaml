@@ -63,6 +63,22 @@
 								  Glyph="&#xEBE7;" />
 					</NavigationViewItem.Icon>
 				</NavigationViewItem>
+				<NavigationViewItem Content="WrapPanel"
+									nav:NavigationProperties.PageType="local:WrapPanelPage">
+					<NavigationViewItem.Icon>
+						<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}"
+								  FontSize="12"
+								  Glyph="&#xEA37;" />
+					</NavigationViewItem.Icon>
+				</NavigationViewItem>
+				<NavigationViewItem Content="SizeSpecifiedWrapPanel"
+									nav:NavigationProperties.PageType="local:SizeSpecifiedWrapPanelPage">
+					<NavigationViewItem.Icon>
+						<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}"
+								  FontSize="12"
+								  Glyph="&#xEA37;" />
+					</NavigationViewItem.Icon>
+				</NavigationViewItem>
 			</NavigationView.MenuItems>
 
 			<Frame x:Name="rootFrame">

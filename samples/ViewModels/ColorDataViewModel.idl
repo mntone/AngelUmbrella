@@ -1,0 +1,13 @@
+namespace Mntone.AngelUmbrella.Samples.ViewModels
+{
+	[constructor_name("IColorDataViewModelFactory", BB065CB0-8A40-5176-A33F-2E2D3D9350FD)]
+	[interface_name("IColorDataViewModel", 981A7CD7-2AD2-4496-8AAE-25BD69B56648)]
+	runtimeclass ColorDataViewModel
+	{
+		ColorDataViewModel(String name, Windows.UI.Color color);
+
+		[noexcept] Windows.UI.Color Color { get; };
+		[noexcept] String Name { get; };
+		[noexcept] Boolean PreferredDarkForeground { get; };
+	}
+}

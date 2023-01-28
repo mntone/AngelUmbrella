@@ -145,6 +145,40 @@ namespace Mntone.AngelUmbrella
 			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
 		}
 
+		[interface_name("IWrapPanel", 92F154FF-CB7F-4461-9568-5101315369AE)]
+		[static_name("IWrapPanelStatics", 6B1B611A-6D54-49D0-BE7A-2F341561E16E)]
+		runtimeclass WrapPanel : Microsoft.UI.Xaml.Controls.Panel
+		{
+			WrapPanel();
+
+			Double HorizontalSpacing;
+			Microsoft.UI.Xaml.Controls.Orientation Orientation;
+			Double VerticalSpacing;
+
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HorizontalSpacingProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty VerticalSpacingProperty { get; };
+		}
+
+		[interface_name("ISizeSpecifiedWrapPanel", D1EF33F8-E16A-492D-BAEB-305621AAF4C8)]
+		[static_name("ISizeSpecifiedWrapPanelStatics", 91F2F08B-7104-425E-8456-0E9B0AB4D9EE)]
+		runtimeclass SizeSpecifiedWrapPanel : Microsoft.UI.Xaml.Controls.Panel
+		{
+			SizeSpecifiedWrapPanel();
+
+			Double ItemHeight;
+			Double ItemWidth;
+			Double HorizontalSpacing;
+			Microsoft.UI.Xaml.Controls.Orientation Orientation;
+			Double VerticalSpacing;
+
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ItemHeightProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty ItemWidthProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty HorizontalSpacingProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty OrientationProperty { get; };
+			[noexcept] static Microsoft.UI.Xaml.DependencyProperty VerticalSpacingProperty { get; };
+		}
+
 		[interface_name("IOddEvenStyleSelector", 3B317E48-32FE-4922-8812-671E697B31B1)]
 		runtimeclass OddEvenStyleSelector : Microsoft.UI.Xaml.Controls.StyleSelector
 		{

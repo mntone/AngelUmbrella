@@ -1,0 +1,8 @@
+namespace Mntone.AngelUmbrella.Samples
+{
+	[interface_name("IWrapPanelPage", 3C59B469-25F7-4B4B-8FA2-A6274FEEFCCF)]
+	runtimeclass WrapPanelPage : Microsoft.UI.Xaml.Controls.Page
+	{
+		WrapPanelPage();
+	}
+}

@@ -10,16 +10,27 @@
     <Page Include="SettingsWindow_DetailPage.xaml" />
     <Page Include="SettingsWindow_OddEvenPage.xaml" />
     <Page Include="SettingsWindow_RootPage.xaml" />
+    <Page Include="SizeSpecifiedWrapPanelPage.xaml" />
+    <Page Include="WrapPanelPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
+    <Midl Include="ViewModels\ColorDataViewModel.idl">
+      <Filter>ViewModels</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="ViewModels\ColorDataViewModel.cpp">
+      <Filter>ViewModels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ViewModels\ColorDataViewModel.h">
+      <Filter>ViewModels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -47,6 +58,9 @@
   <ItemGroup>
     <Filter Include="Assets">
       <UniqueIdentifier>{8c972921-8910-43fa-bcfe-c5d4b0c53ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModels">
+      <UniqueIdentifier>{620c8f12-f285-4c18-870b-97e204484715}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

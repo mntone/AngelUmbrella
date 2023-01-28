@@ -168,6 +168,13 @@
       <DependentUpon>SettingsWindow_RootPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="SizeSpecifiedWrapPanelPage.xaml.h">
+      <DependentUpon>SizeSpecifiedWrapPanelPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ViewModels\ColorDataViewModel.h" />
+    <ClInclude Include="WrapPanelPage.xaml.h">
+      <DependentUpon>WrapPanelPage.xaml</DependentUpon>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -183,6 +190,8 @@
     <Page Include="SettingsWindow_RootPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SizeSpecifiedWrapPanelPage.xaml" />
+    <Page Include="WrapPanelPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -213,6 +222,13 @@
       <DependentUpon>SettingsWindow_RootPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="SizeSpecifiedWrapPanelPage.xaml.cpp">
+      <DependentUpon>SizeSpecifiedWrapPanelPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ViewModels\ColorDataViewModel.cpp" />
+    <ClCompile Include="WrapPanelPage.xaml.cpp">
+      <DependentUpon>WrapPanelPage.xaml</DependentUpon>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl">
@@ -241,6 +257,15 @@
     </Midl>
     <Midl Include="SettingsWindow_RootPage.idl">
       <DependentUpon>SettingsWindow_RootPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="SizeSpecifiedWrapPanelPage.idl">
+      <DependentUpon>SizeSpecifiedWrapPanelPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="ViewModels\ColorDataViewModel.idl" />
+    <Midl Include="WrapPanelPage.idl">
+      <DependentUpon>WrapPanelPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
   </ItemGroup>

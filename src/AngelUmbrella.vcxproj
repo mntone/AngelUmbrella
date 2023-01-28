@@ -168,11 +168,14 @@
     <ClInclude Include="Controls\SettingsPanel.xaml.h">
       <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="Controls\SizeSpecifiedWrapPanel.h" />
+    <ClInclude Include="Controls\WrapPanel.h" />
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h" />
     <ClInclude Include="Converters\DateTimeToStringConverter.h" />
     <ClInclude Include="Converters\InvertedBooleanConverter.h" />
     <ClInclude Include="Converters\StringIsPresentToVisibilityConverter.h" />
     <ClInclude Include="Helpers\DependencyPropertyHelper.h" />
+    <ClInclude Include="Helpers\LayoutHelper.h" />
     <ClInclude Include="Helpers\ValueHelper.h" />
     <ClInclude Include="Helpers\XamlHelpers.h" />
     <ClInclude Include="Navigation\NavigationProperties.h" />
@@ -205,6 +208,10 @@
     <ClCompile Include="Controls\SettingsPanel.xaml.properties.cpp">
       <DependentUpon>Controls\SettingsPanel.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="Controls\SizeSpecifiedWrapPanel.cpp" />
+    <ClCompile Include="Controls\SizeSpecifiedWrapPanel.properties.cpp" />
+    <ClCompile Include="Controls\WrapPanel.cpp" />
+    <ClCompile Include="Controls\WrapPanel.properties.cpp" />
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp" />
     <ClCompile Include="Converters\DateTimeToStringConverter.cpp" />
     <ClCompile Include="Converters\InvertedBooleanConverter.cpp" />

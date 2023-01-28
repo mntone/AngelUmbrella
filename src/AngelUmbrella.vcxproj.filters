@@ -61,6 +61,12 @@
     <ClInclude Include="Controls\SettingsCardAutomationPeer.h">
       <Filter>Controls</Filter>
     </ClInclude>
+    <ClInclude Include="Controls\SizeSpecifiedWrapPanel.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\WrapPanel.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
     <ClInclude Include="Converters\BooleanToVisibilityConverter.h">
       <Filter>Converters</Filter>
     </ClInclude>
@@ -76,6 +82,9 @@
     <ClInclude Include="Helpers\DependencyPropertyHelper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Helpers\LayoutHelper.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
     <ClInclude Include="Helpers\ValueHelper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
@@ -86,6 +95,9 @@
       <Filter>Navigation</Filter>
     </ClInclude>
     <ClInclude Include="Triggers\ControlSizeTrigger.h">
+      <Filter>Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="Triggers\ControlWidthTrigger.h">
       <Filter>Triggers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -99,6 +111,18 @@
       <Filter>Controls</Filter>
     </ClCompile>
     <ClCompile Include="Controls\SettingsCardAutomationPeer.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\SizeSpecifiedWrapPanel.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\SizeSpecifiedWrapPanel.properties.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\WrapPanel.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\WrapPanel.properties.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
     <ClCompile Include="Converters\BooleanToVisibilityConverter.cpp">
@@ -123,6 +147,12 @@
       <Filter>Triggers</Filter>
     </ClCompile>
     <ClCompile Include="Triggers\ControlSizeTrigger.properties.cpp">
+      <Filter>Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="Triggers\ControlWidthTrigger.cpp">
+      <Filter>Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="Triggers\ControlWidthTrigger.properties.cpp">
       <Filter>Triggers</Filter>
     </ClCompile>
   </ItemGroup>
