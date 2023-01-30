@@ -20,8 +20,6 @@ void WrapPanel::DependencyProperties::DelayInitIfNeeded() {
 
 	DEFINE_PARENT_TYPENAME(WrapPanel);
 
-	double nan { std::numeric_limits<double>::signaling_NaN() };
-
 	DEFINE_DP_CALLBACK(
 		HorizontalSpacing,
 		double,
