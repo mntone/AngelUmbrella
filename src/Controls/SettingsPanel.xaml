@@ -81,6 +81,8 @@
 								 Width="{StaticResource SettingsCardHeaderIconMaxSize}">
 							<ContentPresenter x:Name="HeaderIconPresenter"
 											  Content="{TemplateBinding HeaderIcon}"
+											  ContentTemplate="{x:Null}"
+											  ContentTemplateSelector="{x:Null}"
 											  HighContrastAdjustment="None"
 											  IsTextScaleFactorEnabled="False" />
 						</Viewbox>
@@ -90,11 +92,15 @@
 							<ContentPresenter x:Name="Header"
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Header}"
+											  ContentTemplate="{x:Null}"
+											  ContentTemplateSelector="{x:Null}"
 											  TextWrapping="Wrap" />
 							<ContentPresenter x:DeferLoadStrategy="Lazy"
 											  x:Name="Description"
 											  AutomationProperties.AccessibilityView="Raw"
 											  Content="{TemplateBinding Description}"
+											  ContentTemplate="{x:Null}"
+											  ContentTemplateSelector="{x:Null}"
 											  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 											  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
 											  Margin="0,0,0,-1"
@@ -104,7 +110,6 @@
 
 						<ContentPresenter x:Name="Content"
 										  Grid.Column="2"
-										  Content="{TemplateBinding Content}"
 										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 					</Grid>

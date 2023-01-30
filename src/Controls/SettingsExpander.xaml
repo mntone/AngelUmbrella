@@ -118,8 +118,7 @@
 							<ColumnDefinition Width="Auto" />
 						</Grid.ColumnDefinitions>
 
-						<ContentPresenter Content="{TemplateBinding Content}"
-										  ContentTransitions="{TemplateBinding ContentTransitions}"
+						<ContentPresenter ContentTransitions="{TemplateBinding ContentTransitions}"
 										  Foreground="{TemplateBinding Foreground}" />
 
 						<ContentControl x:Name="ExpandCollapseChevronBorder"
@@ -368,6 +367,8 @@
 										 Width="{StaticResource SettingsCardHeaderIconMaxSize}">
 									<ContentPresenter x:Name="HeaderIconPresenter"
 													  Content="{TemplateBinding HeaderIcon}"
+													  ContentTemplate="{x:Null}"
+													  ContentTemplateSelector="{x:Null}"
 													  HighContrastAdjustment="None"
 													  IsTextScaleFactorEnabled="False" />
 								</Viewbox>
@@ -377,11 +378,15 @@
 											VerticalAlignment="Center">
 									<ContentPresenter x:Name="Header"
 													  Content="{TemplateBinding Header}"
+													  ContentTemplate="{x:Null}"
+													  ContentTemplateSelector="{x:Null}"
 													  Foreground="{TemplateBinding Foreground}"
 													  TextWrapping="Wrap" />
 									<ContentPresenter x:DeferLoadStrategy="Lazy"
 													  x:Name="Description"
 													  Content="{TemplateBinding Description}"
+													  ContentTemplate="{x:Null}"
+													  ContentTemplateSelector="{x:Null}"
 													  FontSize="{StaticResource SettingsCardDescriptionFontSize}"
 													  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
 													  Margin="0,0,0,-1"
@@ -391,7 +396,6 @@
 
 								<ContentPresenter x:Name="Content"
 												  Grid.Column="2"
-												  Content="{TemplateBinding Content}"
 												  HorizontalAlignment="Right"
 												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 												  VerticalAlignment="Center"
@@ -408,8 +412,8 @@
 									<CompositeTransform TranslateY="{Binding TemplateSettings.NegativeContentHeight, RelativeSource={RelativeSource TemplatedParent}}" />
 								</Border.RenderTransform>
 								<ContentPresenter Content="{TemplateBinding ExpanderContent}"
-												  ContentTemplate="{TemplateBinding ContentTemplate}"
-												  ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+												  ContentTemplate="{x:Null}"
+												  ContentTemplateSelector="{x:Null}"
 												  VerticalContentAlignment="Center" />
 							</Border>
 						</Border>
