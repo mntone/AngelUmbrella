@@ -5,13 +5,13 @@
 		<AngelCopyright>Copyright (c) 2023 $(AngelAuthor). All rights reserved.</AngelCopyright>
 		<AngelVersionMajor>1</AngelVersionMajor>
 		<AngelVersionMinor>1</AngelVersionMinor>
-		<AngelVersionPatch>2</AngelVersionPatch>
+		<AngelVersionPatch>3</AngelVersionPatch>
 		<AngelVersionBuild Condition="$(AngelVersionBuild)==''">$([System.DateTime]::Now.ToString(`yyyy`))</AngelVersionBuild>
 		<AngelVersionRevision Condition="$(AngelVersionRevision)==''">$([System.DateTime]::Now.ToString(`MMdd`))</AngelVersionRevision>
 		<AngelVersionPreRelease></AngelVersionPreRelease>
 		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreRelease)'=='alpha'">0</AngelVersionPreReleaseId>
 		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(AngelVersionPreRelease.StartsWith(`alpha`))'">$(AngelVersionPreRelease.Substring(5))</AngelVersionPreReleaseId>
-		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(RWinRTVersionPreRelease)'=='beta'">1000</AngelVersionPreReleaseId>
+		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(AngelVersionPreRelease)'=='beta'">1000</AngelVersionPreReleaseId>
 		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'=='' And '$(AngelVersionPreRelease.StartsWith(`beta`))'">$([MSBuild]::Add(1000, $([System.Convert]::ToUInt16($(AngelVersionPreRelease.Substring(4)), 10))))</AngelVersionPreReleaseId>
 		<AngelVersionPreReleaseId Condition="'$(AngelVersionPreReleaseId)'==''">10000</AngelVersionPreReleaseId>
 	</PropertyGroup>

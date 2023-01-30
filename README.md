@@ -18,6 +18,8 @@ https://user-images.githubusercontent.com/901816/211709015-77fee141-17b7-45e6-a9
   - **SettingsCard** - Provide basic settings card.
   - **SettingsExpander** - Provide settings card with expander.
   - **SettingsPanel** - Provide settings layout in items control, such as `ListView` or `GridView`, with the style `CardListViewItemStyle`.
+  - **SizeSpecifiedWrapPanelPage** - Provide flow layout panel with item size.
+  - **WrapPanel** - Provide flow layout panel.
 - *Mntone.AngelUmbrella.Navigation*
   - **NavigationProperties** - Provide xaml-friendly navigation data.
 - *Mntone.AngelUmbrella.Triggers*
